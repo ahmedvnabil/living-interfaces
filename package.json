@@ -1,0 +1,15 @@
+{
+  "name": "living-assets",
+  "version": "1.0.0",
+  "description": "Living Assets Library — generative visualization OS for futuristic interfaces",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "watch": "node build.mjs --watch",
+    "docs": "node build.mjs && node scripts/gen-docs.mjs",
+    "serve": "python3 -m http.server 4173"
+  },
+  "devDependencies": {
+    "esbuild": "^0.21.0"
+  }
+}
