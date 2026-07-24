@@ -1,0 +1,38 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Signal Observatory — Living Assets</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../themes/tokens.css">
+<link rel="stylesheet" href="../themes/lab.css">
+<link rel="stylesheet" href="shared/showcase.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.min.js","gsap":"https://cdn.jsdelivr.net/npm/gsap@3.12.5/index.js"}}</script>
+</head><body class="la-body">
+<nav class="sc-nav"><div class="sc-nav__inner">
+  <a class="la-link" href="index.html"><span class="la-label">← Showcases</span></a>
+  <span class="la-label">Study 25 · Signal Observatory</span>
+</div></nav>
+
+<div class="sc-section">
+  <span class="la-label">Array 9 · listening post</span>
+  <h1 style="letter-spacing:-0.02em;margin:8px 0 24px">Three ways to see a signal.</h1>
+  <div class="sc-cols sc-cols--3">
+    <div class="sc-stage sc-stage--square" id="prop"><span class="la-label sc-stage__label">Propagation · press to emit</span></div>
+    <div class="sc-stage sc-stage--square" id="quiver"><span class="la-label sc-stage__label">Field quiver</span></div>
+    <div class="sc-stage sc-stage--square" id="dipole"><span class="la-label sc-stage__label">Dipole lines</span></div>
+  </div>
+  <p class="sc-prose" style="margin-top:28px">The same event, three instruments: hop-by-hop
+  graph traversal, a sampled vector field, and integrated dipole field lines. Instruments,
+  not illustrations — each is live and interruptible.</p>
+</div>
+
+<footer class="sc-footer">Living Assets · study 25.</footer>
+
+<script type="module">
+  import SignalPropagation from '../assets/simulations/signal-propagation.js';
+  import VectorFields from '../assets/simulations/vector-fields.js';
+  import MagneticField from '../assets/simulations/magnetic-field.js';
+  new SignalPropagation().init(document.getElementById('prop'));
+  new VectorFields().init(document.getElementById('quiver'));
+  new MagneticField().init(document.getElementById('dipole'));
+</script>
+</body></html>

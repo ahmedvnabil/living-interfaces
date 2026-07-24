@@ -1,0 +1,56 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Living Assets — Showcases</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../themes/tokens.css">
+<link rel="stylesheet" href="../themes/lab.css">
+<link rel="stylesheet" href="shared/showcase.css">
+</head><body class="la-body">
+<nav class="sc-nav"><div class="sc-nav__inner">
+  <a class="la-link" href="../index.html"><span class="la-label">← Specimen Catalog</span></a>
+  <span class="la-label">25 Showcases</span>
+</div></nav>
+<div class="sc-section">
+  <span class="la-label">Application Studies</span>
+  <h1 style="letter-spacing:-0.02em">Twenty-five deployments of the library.</h1>
+  <p class="sc-prose">Each page is a self-contained study: plain HTML importing compiled
+  modules from <code class="la-mono">/assets</code>. View source on any of them — that is the
+  entire integration.</p>
+  <div class="sc-cols sc-cols--3" style="margin-top:32px" id="list"></div>
+</div>
+<script>
+  const pages = [
+    ['landing-hero', 'Landing Hero', 'Full-bleed living background under product copy'],
+    ['ai-dashboard', 'AI Dashboard', 'Model attention, activations and signal flow'],
+    ['portfolio', 'Portfolio', 'Cursor physics and a reactive typographic grid'],
+    ['agency', 'Agency', 'Ribbon kinematics as brand energy'],
+    ['data-lab', 'Data Lab', 'Four lattice simulations as instruments'],
+    ['map', 'Map', 'Isolines, synoptic wind and hex cells'],
+    ['humanitarian-intelligence', 'Humanitarian Intelligence', 'Heat, signals and resource rivers'],
+    ['uae-intelligence', 'UAE Intelligence', 'Terrain, infrastructure and energy transport'],
+    ['creative-studio', 'Creative Studio', 'Differential growth and glyph particles'],
+    ['media-platform', 'Media Platform', 'Stream braids and ambient constellations'],
+    ['interactive-story', 'Interactive Story', 'Growth systems as narrative chapters'],
+    ['museum', 'Museum', 'Tessellation and morphology as exhibits'],
+    ['scientific-report', 'Scientific Report', 'Live figures inside a paper layout'],
+    ['digital-twin', 'Digital Twin', 'Topology, thermals and transport of a facility'],
+    ['knowledge-graph', 'Knowledge Graph', 'A navigable entity manifold'],
+    ['weather', 'Weather', 'Clouds, wind and pressure isolines'],
+    ['finance', 'Finance', 'Flow, correlation and heat of markets'],
+    ['space', 'Space', 'Planetary morphology and particle fields'],
+    ['biology', 'Biology', 'Physarum, mold networks and soft bodies'],
+    ['architecture', 'Architecture', 'Distance fields and structural lattices'],
+    ['genomics-browser', 'Genomics Browser', 'Sequence tracks and expression automata'],
+    ['ocean-systems', 'Ocean Systems', 'Waves, currents and surface wind'],
+    ['energy-grid', 'Energy Grid', 'Conduits, load and network health'],
+    ['materials-lab', 'Materials Lab', 'Crystallization and implicit surfaces'],
+    ['signal-observatory', 'Signal Observatory', 'Propagation, quivers and dipole fields'],
+  ];
+  document.getElementById('list').innerHTML = pages.map(([slug, name, desc], i) =>
+    `<a href="${slug}.html" style="text-decoration:none" class="sc-kpi">
+      <span class="la-label">${String(i + 1).padStart(2, '0')}</span>
+      <b style="font-size:1.05rem">${name}</b>
+      <span style="font-size:var(--la-text-sm)">${desc}</span>
+    </a>`).join('');
+</script>
+</body></html>

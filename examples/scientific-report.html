@@ -1,0 +1,48 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scientific Report — Living Assets</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../themes/tokens.css">
+<link rel="stylesheet" href="../themes/lab.css">
+<link rel="stylesheet" href="shared/showcase.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.min.js","gsap":"https://cdn.jsdelivr.net/npm/gsap@3.12.5/index.js"}}</script>
+</head><body class="la-body">
+<nav class="sc-nav"><div class="sc-nav__inner">
+  <a class="la-link" href="index.html"><span class="la-label">← Showcases</span></a>
+  <span class="la-label">Study 13 · Scientific Report</span>
+</div></nav>
+
+<article class="sc-section" style="max-width:720px">
+  <span class="la-label">Technical note · TN-2026-114 · simulated study</span>
+  <h1 style="letter-spacing:-0.02em;font-size:1.9rem">Topographic drift under periodic forcing</h1>
+  <p class="la-label" style="margin-bottom:28px">A. Reader · Institute for Living Interfaces</p>
+  <p class="sc-prose"><strong>Abstract.</strong> We examine an fBm elevation model under slow
+  temporal forcing and report isoline migration consistent with sub-harmonic drift. Figures
+  are not renderings of results; they are the running experiment.</p>
+
+  <h2 class="sc-h2" style="margin-top:36px">1 · Elevation field</h2>
+  <p class="sc-prose">Figure 1 shows the isoline extraction (marching squares, 12 levels)
+  over the evolving field. Index contours carry survey weight.</p>
+  <div class="sc-stage sc-stage--tall" id="fig1" style="margin:16px 0 6px"></div>
+  <span class="la-label">Fig. 1 — live isoline extraction</span>
+
+  <h2 class="sc-h2" style="margin-top:36px">2 · Gradient structure</h2>
+  <p class="sc-prose">The quiver plot in Figure 2 samples the same field's curl. Note the
+  rotational cells forming at mid-scale.</p>
+  <div class="sc-stage sc-stage--tall" id="fig2" style="margin:16px 0 6px"></div>
+  <span class="la-label">Fig. 2 — live quiver sampling</span>
+
+  <h2 class="sc-h2" style="margin-top:36px">3 · Method availability</h2>
+  <p class="sc-prose">Both instruments are importable modules; the entire figure pipeline
+  is <code class="la-mono">init(figureDiv)</code>.</p>
+</article>
+
+<footer class="sc-footer">Living Assets · study 13 · simulated study, no real data.</footer>
+
+<script type="module">
+  import ContourMap from '../assets/simulations/contour-map.js';
+  import VectorFields from '../assets/simulations/vector-fields.js';
+  new ContourMap().init(document.getElementById('fig1'));
+  new VectorFields().init(document.getElementById('fig2'));
+</script>
+</body></html>

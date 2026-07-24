@@ -1,0 +1,46 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UAE Intelligence — Living Assets</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../themes/tokens.css">
+<link rel="stylesheet" href="../themes/lab.css">
+<link rel="stylesheet" href="shared/showcase.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.min.js","gsap":"https://cdn.jsdelivr.net/npm/gsap@3.12.5/index.js"}}</script>
+</head><body class="la-body">
+<nav class="sc-nav"><div class="sc-nav__inner">
+  <a class="la-link" href="index.html"><span class="la-label">← Showcases</span></a>
+  <span class="la-label">Study 08 · National Systems Atlas</span>
+</div></nav>
+
+<header class="sc-hero" style="min-height:64vh">
+  <div class="sc-hero__bg" id="terrain"></div>
+  <div class="sc-hero__inner">
+    <span class="la-badge">SIMULATED DATA</span>
+    <h1>Desert systems atlas — UAE.</h1>
+    <p class="lede">A fictional national-infrastructure study: dune-field terrain survey,
+    backbone network health and energy transport, composed from three instruments.</p>
+  </div>
+</header>
+
+<div class="sc-section sc-cols sc-cols--2">
+  <div class="sc-stage sc-stage--tall" id="topology"><span class="la-label sc-stage__label">Backbone · core / agg / edge</span></div>
+  <div class="sc-stage sc-stage--tall" id="energy"><span class="la-label sc-stage__label">Grid transport · 6 conduits</span></div>
+</div>
+
+<div class="sc-section sc-section--hairline sc-cols sc-cols--3">
+  <div class="sc-kpi"><span class="la-label">Solar share · midday</span><b>38.4%</b></div>
+  <div class="sc-kpi"><span class="la-label">Desalination flow</span><b>1.9 Mm³/d</b></div>
+  <div class="sc-kpi"><span class="la-label">Backbone latency</span><b>3.7 ms</b></div>
+</div>
+
+<footer class="sc-footer">Living Assets · study 08 · all figures simulated.</footer>
+
+<script type="module">
+  import TerrainGenerator from '../assets/simulations/terrain-generator.js';
+  import NetworkTopology from '../assets/simulations/network-topology.js';
+  import EnergyStreams from '../assets/simulations/energy-streams.js';
+  new TerrainGenerator().init(document.getElementById('terrain'), { params: { relief: 0.6, scale: 2.2 } });
+  new NetworkTopology().init(document.getElementById('topology'));
+  new EnergyStreams().init(document.getElementById('energy'));
+</script>
+</body></html>

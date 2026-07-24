@@ -1,0 +1,47 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Materials Lab — Living Assets</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../themes/tokens.css">
+<link rel="stylesheet" href="../themes/lab.css">
+<link rel="stylesheet" href="shared/showcase.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.min.js","gsap":"https://cdn.jsdelivr.net/npm/gsap@3.12.5/index.js"}}</script>
+</head><body class="la-body">
+<nav class="sc-nav"><div class="sc-nav__inner">
+  <a class="la-link" href="index.html"><span class="la-label">← Showcases</span></a>
+  <span class="la-label">Study 24 · Materials Lab</span>
+</div></nav>
+
+<div class="sc-section sc-cols sc-cols--2" style="align-items:center">
+  <div class="sc-stage sc-stage--square" id="dla"></div>
+  <div>
+    <span class="la-label">Sample 114 · electrodeposition</span>
+    <h1 style="letter-spacing:-0.02em">Watching matter decide.</h1>
+    <p class="sc-prose">Diffusion-limited aggregation: random walkers freeze on contact.
+    Recent growth carries the accent; tilt the field with your pointer.</p>
+    <dl class="la-meta" style="margin-top:18px">
+      <dt>fractal dimension</dt><dd>≈ 1.71</dd>
+      <dt>walkers</dt><dd>700</dd>
+      <dt>symmetry</dt><dd>C1</dd>
+    </dl>
+  </div>
+</div>
+
+<div class="sc-section sc-section--hairline sc-cols sc-cols--2" style="align-items:center">
+  <div>
+    <h2 class="sc-h2">Phase blending</h2>
+    <p class="sc-prose">A second sample: implicit bodies under smooth-minimum union,
+    read through banded sections — alloying, as geometry.</p>
+  </div>
+  <div class="sc-stage sc-stage--square" id="sdf"></div>
+</div>
+
+<footer class="sc-footer">Living Assets · study 24.</footer>
+
+<script type="module">
+  import CrystalGrowth from '../assets/simulations/crystal-growth.js';
+  import DistanceFields from '../assets/simulations/distance-fields.js';
+  new CrystalGrowth().init(document.getElementById('dla'));
+  new DistanceFields().init(document.getElementById('sdf'), { params: { shapes: 5 } });
+</script>
+</body></html>

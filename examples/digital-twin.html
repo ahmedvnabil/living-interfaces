@@ -1,0 +1,35 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Digital Twin — Living Assets</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../themes/tokens.css">
+<link rel="stylesheet" href="../themes/lab.css">
+<link rel="stylesheet" href="shared/showcase.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.min.js","gsap":"https://cdn.jsdelivr.net/npm/gsap@3.12.5/index.js"}}</script>
+</head><body class="la-body">
+<nav class="sc-nav"><div class="sc-nav__inner">
+  <a class="la-link" href="index.html"><span class="la-label">← Showcases</span></a>
+  <span class="la-label">Study 14 · Digital Twin</span>
+</div></nav>
+
+<div class="sc-section">
+  <span class="la-badge la-badge--live">TWIN SYNCED · SIMULATED</span>
+  <h1 style="letter-spacing:-0.02em;margin:12px 0 24px">Facility 7 — live mirror</h1>
+  <div class="sc-cols sc-cols--2">
+    <div class="sc-stage sc-stage--tall" id="topo"><span class="la-label sc-stage__label">Systems topology · click to repair</span></div>
+    <div class="sc-stage sc-stage--tall" id="thermal"><span class="la-label sc-stage__label">Thermal plate · hall B</span></div>
+  </div>
+  <div class="sc-stage sc-stage--wide" id="transport" style="margin-top:24px"><span class="la-label sc-stage__label">Material transport</span></div>
+</div>
+
+<footer class="sc-footer">Living Assets · study 14 · three mirrored subsystems, one page.</footer>
+
+<script type="module">
+  import NetworkTopology from '../assets/simulations/network-topology.js';
+  import HeatMap from '../assets/simulations/heat-map.js';
+  import EnergyStreams from '../assets/simulations/energy-streams.js';
+  new NetworkTopology().init(document.getElementById('topo'), { params: { fail: 0.008 } });
+  new HeatMap().init(document.getElementById('thermal'));
+  new EnergyStreams().init(document.getElementById('transport'), { params: { conduits: 9 } });
+</script>
+</body></html>

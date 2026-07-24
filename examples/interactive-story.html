@@ -1,0 +1,53 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Interactive Story — Living Assets</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../themes/tokens.css">
+<link rel="stylesheet" href="../themes/lab.css">
+<link rel="stylesheet" href="shared/showcase.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.min.js","gsap":"https://cdn.jsdelivr.net/npm/gsap@3.12.5/index.js"}}</script>
+</head><body class="la-body">
+<nav class="sc-nav"><div class="sc-nav__inner">
+  <a class="la-link" href="index.html"><span class="la-label">← Showcases</span></a>
+  <span class="la-label">Study 11 · Interactive Story</span>
+</div></nav>
+
+<div class="sc-section" style="max-width:760px">
+  <span class="la-label">A field notebook in three chapters</span>
+  <h1 style="letter-spacing:-0.02em">What the ground remembers</h1>
+  <p class="sc-prose">Scroll. Each chapter's figure is alive — the story's illustrations
+  are simulations that begin when they enter view.</p>
+</div>
+
+<div class="sc-section sc-section--hairline" style="max-width:760px">
+  <span class="la-label">Chapter I · Canopy</span>
+  <p class="sc-prose">Every tree is a sentence in a grammar. Rewrite the axiom five times
+  and a forest appears.</p>
+  <div class="sc-stage sc-stage--tall" id="trees" style="margin-top:16px"></div>
+</div>
+
+<div class="sc-section sc-section--hairline" style="max-width:760px">
+  <span class="la-label">Chapter II · Root</span>
+  <p class="sc-prose">Below the surface, gravitropism turns wandering into search.
+  Bring your pointer close — roots seek it like water.</p>
+  <div class="sc-stage sc-stage--tall" id="roots" style="margin-top:16px"></div>
+</div>
+
+<div class="sc-section sc-section--hairline" style="max-width:760px">
+  <span class="la-label">Chapter III · Mineral</span>
+  <p class="sc-prose">And where nothing lives, matter still organizes: random walks
+  freeze into dendrites of dimension 1.71.</p>
+  <div class="sc-stage sc-stage--tall" id="crystal" style="margin-top:16px"></div>
+</div>
+
+<footer class="sc-footer">Living Assets · study 11 · figures auto-pause off-screen.</footer>
+
+<script type="module">
+  import LSystemTrees from '../assets/simulations/l-system-trees.js';
+  import RootGrowth from '../assets/simulations/root-growth.js';
+  import CrystalGrowth from '../assets/simulations/crystal-growth.js';
+  new LSystemTrees().init(document.getElementById('trees'));
+  new RootGrowth().init(document.getElementById('roots'));
+  new CrystalGrowth().init(document.getElementById('crystal'));
+</script>
+</body></html>

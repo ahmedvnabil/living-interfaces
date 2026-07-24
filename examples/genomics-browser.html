@@ -1,0 +1,37 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Genomics Browser — Living Assets</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../themes/tokens.css">
+<link rel="stylesheet" href="../themes/lab.css">
+<link rel="stylesheet" href="shared/showcase.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.min.js","gsap":"https://cdn.jsdelivr.net/npm/gsap@3.12.5/index.js"}}</script>
+</head><body class="la-body">
+<nav class="sc-nav"><div class="sc-nav__inner">
+  <a class="la-link" href="index.html"><span class="la-label">← Showcases</span></a>
+  <span class="la-label">Study 21 · Genomics Browser</span>
+</div></nav>
+
+<div class="sc-section">
+  <span class="la-badge">SYNTHETIC SEQUENCE</span>
+  <h1 style="letter-spacing:-0.02em;margin:12px 0 8px">Locus V-7 · expression browser</h1>
+  <p class="sc-prose">Synthetic data only. Expression tracks braid as rivers; regulatory
+  state evolves as a cellular automaton beneath them.</p>
+  <div class="sc-stage sc-stage--wide" id="tracks" style="margin-top:24px"><span class="la-label sc-stage__label">Expression tracks · 8 tissues</span></div>
+  <div class="sc-stage" style="aspect-ratio:21/6;margin-top:24px" id="reg"><span class="la-label sc-stage__label">Regulatory automaton</span></div>
+  <div class="sc-cols sc-cols--3" style="margin-top:24px">
+    <div class="sc-kpi"><span class="la-label">Length</span><b>184 kb</b></div>
+    <div class="sc-kpi"><span class="la-label">Variants tracked</span><b>2 113</b></div>
+    <div class="sc-kpi"><span class="la-label">GC content</span><b>41.2%</b></div>
+  </div>
+</div>
+
+<footer class="sc-footer">Living Assets · study 21 · synthetic sequence.</footer>
+
+<script type="module">
+  import DataRivers from '../assets/simulations/data-rivers.js';
+  import CellularAutomata from '../assets/simulations/cellular-automata.js';
+  new DataRivers().init(document.getElementById('tracks'), { params: { series: 8, speed: 0.6 } });
+  new CellularAutomata().init(document.getElementById('reg'), { params: { cell: 5, rate: 8 } });
+</script>
+</body></html>

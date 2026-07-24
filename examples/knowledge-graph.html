@@ -1,0 +1,37 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Knowledge Graph — Living Assets</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../themes/tokens.css">
+<link rel="stylesheet" href="../themes/lab.css">
+<link rel="stylesheet" href="shared/showcase.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.min.js","gsap":"https://cdn.jsdelivr.net/npm/gsap@3.12.5/index.js"}}</script>
+</head><body class="la-body">
+<nav class="sc-nav"><div class="sc-nav__inner">
+  <a class="la-link" href="index.html"><span class="la-label">← Showcases</span></a>
+  <span class="la-label">Study 15 · Knowledge Graph</span>
+</div></nav>
+
+<div class="sc-section sc-cols sc-cols--sidebar" style="align-items:start">
+  <div class="sc-stage" style="aspect-ratio:4/3" id="graph"><span class="la-label sc-stage__label">Entity manifold · 90 nodes</span></div>
+  <div>
+    <span class="la-label">Corpus inspector</span>
+    <h1 style="letter-spacing:-0.02em;font-size:1.7rem;margin:8px 0 12px">Research corpus, embedded.</h1>
+    <p class="sc-prose">Entities settle into spring–charge equilibrium; clusters betray the
+    latent taxonomy. Hubs are labeled; disturb the manifold with your pointer.</p>
+    <dl class="la-meta" style="margin-top:20px">
+      <dt>entities</dt><dd>90</dd>
+      <dt>relations</dt><dd>~112</dd>
+      <dt>domains</dt><dd>SYS · BIO · GEO · NET · MAT</dd>
+      <dt>layout</dt><dd>force-directed</dd>
+    </dl>
+  </div>
+</div>
+
+<footer class="sc-footer">Living Assets · study 15.</footer>
+
+<script type="module">
+  import KnowledgeGraph from '../assets/simulations/knowledge-graph.js';
+  new KnowledgeGraph().init(document.getElementById('graph'), { params: { nodes: 90 } });
+</script>
+</body></html>

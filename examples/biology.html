@@ -1,0 +1,46 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biology — Living Assets</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../themes/tokens.css">
+<link rel="stylesheet" href="../themes/lab.css">
+<link rel="stylesheet" href="shared/showcase.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.min.js","gsap":"https://cdn.jsdelivr.net/npm/gsap@3.12.5/index.js"}}</script>
+</head><body class="la-body">
+<nav class="sc-nav"><div class="sc-nav__inner">
+  <a class="la-link" href="index.html"><span class="la-label">← Showcases</span></a>
+  <span class="la-label">Study 19 · Wet Lab</span>
+</div></nav>
+
+<div class="sc-section">
+  <span class="la-label">Bench 2 · morphogenesis</span>
+  <h1 style="letter-spacing:-0.02em;margin:8px 0 24px">Three organisms, three algorithms.</h1>
+  <div class="sc-cols sc-cols--3">
+    <figure style="margin:0">
+      <div class="sc-stage sc-stage--square" id="physarum"></div>
+      <figcaption style="padding:12px 2px"><span class="la-label">Physarum · chemotaxis</span></figcaption>
+    </figure>
+    <figure style="margin:0">
+      <div class="sc-stage sc-stage--square" id="mold"></div>
+      <figcaption style="padding:12px 2px"><span class="la-label">Transport network · nutrient sites</span></figcaption>
+    </figure>
+    <figure style="margin:0">
+      <div class="sc-stage sc-stage--square" id="soft"></div>
+      <figcaption style="padding:12px 2px"><span class="la-label">Differential growth · closed membrane</span></figcaption>
+    </figure>
+  </div>
+  <p class="sc-prose" style="margin-top:28px">Sense–rotate–deposit; reinforce efficient paths;
+  resample–repel–relax. Three local rules, three phenotypes — none of them drawn by hand.</p>
+</div>
+
+<footer class="sc-footer">Living Assets · study 19.</footer>
+
+<script type="module">
+  import Physarum from '../assets/simulations/physarum.js';
+  import SlimeMold from '../assets/simulations/slime-mold.js';
+  import OrganicGrowth from '../assets/simulations/organic-growth.js';
+  new Physarum().init(document.getElementById('physarum'));
+  new SlimeMold().init(document.getElementById('mold'));
+  new OrganicGrowth().init(document.getElementById('soft'));
+</script>
+</body></html>

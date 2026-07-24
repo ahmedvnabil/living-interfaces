@@ -1,0 +1,44 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Media Platform — Living Assets</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../themes/tokens.css">
+<link rel="stylesheet" href="../themes/lab.css">
+<link rel="stylesheet" href="shared/showcase.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.min.js","gsap":"https://cdn.jsdelivr.net/npm/gsap@3.12.5/index.js"}}</script>
+</head><body class="la-body">
+<nav class="sc-nav"><div class="sc-nav__inner">
+  <a class="la-link" href="index.html"><span class="la-label">← Showcases</span></a>
+  <span class="la-label">Study 10 · Media Platform</span>
+</div></nav>
+
+<header class="sc-hero" style="min-height:56vh">
+  <div class="sc-hero__bg" id="rivers"></div>
+  <div class="sc-hero__inner">
+    <span class="la-label">Signal — an audio journal</span>
+    <h1>This week: the sound of infrastructure.</h1>
+    <p class="lede">Listenership braids as a stream graph behind the masthead.</p>
+  </div>
+</header>
+
+<section class="sc-section sc-cols sc-cols--sidebar">
+  <div>
+    <span class="la-label">Latest editions</span>
+    <div style="display:grid;gap:12px;margin-top:14px">
+      <div class="sc-kpi"><span class="la-label">E47 · 42 min</span><b style="font-size:1.05rem">Substations at dusk</b></div>
+      <div class="sc-kpi"><span class="la-label">E46 · 38 min</span><b style="font-size:1.05rem">The last analog exchange</b></div>
+      <div class="sc-kpi"><span class="la-label">E45 · 51 min</span><b style="font-size:1.05rem">Turbine harmonics</b></div>
+    </div>
+  </div>
+  <div class="sc-stage sc-stage--square" id="listeners"><span class="la-label sc-stage__label">Listeners now</span></div>
+</section>
+
+<footer class="sc-footer">Living Assets · study 10.</footer>
+
+<script type="module">
+  import DataRivers from '../assets/simulations/data-rivers.js';
+  import AnimatedNodes from '../assets/simulations/animated-nodes.js';
+  new DataRivers().init(document.getElementById('rivers'), { params: { series: 7, turbulence: 0.5 } });
+  new AnimatedNodes().init(document.getElementById('listeners'));
+</script>
+</body></html>

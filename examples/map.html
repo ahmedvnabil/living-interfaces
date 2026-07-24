@@ -1,0 +1,35 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Map — Living Assets</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../themes/tokens.css">
+<link rel="stylesheet" href="../themes/lab.css">
+<link rel="stylesheet" href="shared/showcase.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.min.js","gsap":"https://cdn.jsdelivr.net/npm/gsap@3.12.5/index.js"}}</script>
+</head><body class="la-body">
+<nav class="sc-nav"><div class="sc-nav__inner">
+  <a class="la-link" href="index.html"><span class="la-label">← Showcases</span></a>
+  <span class="la-label">Study 06 · Cartography</span>
+</div></nav>
+
+<div class="sc-section">
+  <span class="la-label">Sheet 44-C · survey composite</span>
+  <h1 style="letter-spacing:-0.02em;margin:8px 0 24px">Terrain sheet</h1>
+  <div class="sc-stage sc-stage--wide" id="contours"><span class="la-label sc-stage__label">Isohypses · 12 levels</span></div>
+  <div class="sc-cols sc-cols--2" style="margin-top:24px">
+    <div class="sc-stage sc-stage--tall" id="wind"><span class="la-label sc-stage__label">Surface wind</span></div>
+    <div class="sc-stage sc-stage--tall" id="cells"><span class="la-label sc-stage__label">Sampling lattice</span></div>
+  </div>
+</div>
+
+<footer class="sc-footer">Living Assets · study 06 · marching squares, streamline advection, axial hex lattice.</footer>
+
+<script type="module">
+  import ContourMap from '../assets/simulations/contour-map.js';
+  import WindMap from '../assets/simulations/wind-map.js';
+  import HexGrid from '../assets/simulations/hex-grid.js';
+  new ContourMap().init(document.getElementById('contours'));
+  new WindMap().init(document.getElementById('wind'));
+  new HexGrid().init(document.getElementById('cells'), { params: { size: 14 } });
+</script>
+</body></html>

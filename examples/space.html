@@ -1,0 +1,47 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Space — Living Assets</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../themes/tokens.css">
+<link rel="stylesheet" href="../themes/lab.css">
+<link rel="stylesheet" href="shared/showcase.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.min.js","gsap":"https://cdn.jsdelivr.net/npm/gsap@3.12.5/index.js"}}</script>
+</head><body class="la-body">
+<nav class="sc-nav"><div class="sc-nav__inner">
+  <a class="la-link" href="index.html"><span class="la-label">← Showcases</span></a>
+  <span class="la-label">Study 18 · Deep Survey</span>
+</div></nav>
+
+<header class="sc-hero" style="min-height:70vh">
+  <div class="sc-hero__bg" id="body3d"></div>
+  <div class="sc-hero__inner">
+    <span class="la-label">Object 2026-KX · simulated survey</span>
+    <h1>An unnamed body, breathing.</h1>
+    <p class="lede">Icosphere morphology under layered noise — a planetesimal that has not
+    decided its shape. Orbit it with the pointer.</p>
+  </div>
+</header>
+
+<div class="sc-section sc-cols sc-cols--2">
+  <div class="sc-stage sc-stage--tall" id="dust"><span class="la-label sc-stage__label">Circumstellar dust · flow field</span></div>
+  <div>
+    <h2 class="sc-h2">Accretion notes</h2>
+    <p class="sc-prose">The dust lane beside this text advects through a curl-noise
+    velocity field — the same instrument used for wind maps, retuned for vacuum.</p>
+    <dl class="la-meta" style="margin-top:18px">
+      <dt>class</dt><dd>planetesimal</dd>
+      <dt>radius</dt><dd>~412 km</dd>
+      <dt>rotation</dt><dd>7.3 h</dd>
+    </dl>
+  </div>
+</div>
+
+<footer class="sc-footer">Living Assets · study 18 · simulated survey.</footer>
+
+<script type="module">
+  import MeshMorphing from '../assets/simulations/mesh-morphing.js';
+  import FlowField from '../assets/simulations/flow-field.js';
+  new MeshMorphing().init(document.getElementById('body3d'), { params: { amp: 0.3, speed: 0.3 } });
+  new FlowField().init(document.getElementById('dust'), { params: { count: 900, speed: 0.6 } });
+</script>
+</body></html>

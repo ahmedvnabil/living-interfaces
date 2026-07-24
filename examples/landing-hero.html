@@ -1,0 +1,53 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Landing Hero — Living Assets</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../themes/tokens.css">
+<link rel="stylesheet" href="../themes/lab.css">
+<link rel="stylesheet" href="shared/showcase.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.min.js","gsap":"https://cdn.jsdelivr.net/npm/gsap@3.12.5/index.js"}}</script>
+</head><body class="la-body">
+<nav class="sc-nav"><div class="sc-nav__inner">
+  <a class="la-link" href="index.html"><span class="la-label">← Showcases</span></a>
+  <span class="la-label">Study 01 · Landing Hero</span>
+</div></nav>
+
+<header class="sc-hero" style="min-height:88vh">
+  <div class="sc-hero__bg" id="bg"></div>
+  <div class="sc-hero__inner">
+    <span class="la-badge la-badge--live">SYSTEMS NOMINAL</span>
+    <h1>Infrastructure that behaves like an organism.</h1>
+    <p class="lede">A fictional platform page. The background is one module —
+    <code class="la-mono">LivingBackground</code> — initialized on a single div.
+    Move the pointer through it.</p>
+    <div style="display:flex;gap:8px;margin-top:24px">
+      <button class="la-btn la-btn--primary">Request access</button>
+      <button class="la-btn">Read the paper</button>
+    </div>
+  </div>
+</header>
+
+<section class="sc-section sc-cols sc-cols--3">
+  <div class="sc-kpi"><span class="la-label">Uptime</span><b>99.997%</b></div>
+  <div class="sc-kpi"><span class="la-label">Median latency</span><b>41 ms</b></div>
+  <div class="sc-kpi"><span class="la-label">Active regions</span><b>17</b></div>
+</section>
+
+<section class="sc-section sc-section--hairline sc-cols sc-cols--2">
+  <div>
+    <h2 class="sc-h2">The grid listens.</h2>
+    <p class="sc-prose">A second instrument — <strong>Dynamic Grid</strong> — runs beside this
+    paragraph. Interface furniture that responds to attention without demanding it.</p>
+  </div>
+  <div class="sc-stage sc-stage--tall" id="grid"></div>
+</section>
+
+<footer class="sc-footer">Living Assets · study 01 · two modules, two divs, no framework.</footer>
+
+<script type="module">
+  import LivingBackground from '../assets/simulations/living-background.js';
+  import DynamicGrid from '../assets/simulations/dynamic-grid.js';
+  new LivingBackground().init(document.getElementById('bg'), { params: { motes: 90, presence: 0.22 } });
+  new DynamicGrid().init(document.getElementById('grid'), { params: { pitch: 30 } });
+</script>
+</body></html>

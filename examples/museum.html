@@ -1,0 +1,47 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Museum — Living Assets</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../themes/tokens.css">
+<link rel="stylesheet" href="../themes/lab.css">
+<link rel="stylesheet" href="shared/showcase.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.min.js","gsap":"https://cdn.jsdelivr.net/npm/gsap@3.12.5/index.js"}}</script>
+</head><body class="la-body">
+<nav class="sc-nav"><div class="sc-nav__inner">
+  <a class="la-link" href="index.html"><span class="la-label">← Showcases</span></a>
+  <span class="la-label">Study 12 · Museum</span>
+</div></nav>
+
+<div class="sc-section" style="text-align:center">
+  <span class="la-label">Gallery IV · Mathematical Objects</span>
+  <h1 style="letter-spacing:-0.02em">Two exhibits, no glass.</h1>
+</div>
+
+<div class="sc-section sc-cols sc-cols--2">
+  <figure style="margin:0">
+    <div class="sc-stage sc-stage--square" id="voronoi"></div>
+    <figcaption style="padding:14px 2px">
+      <span class="la-label">Exhibit 12.1</span>
+      <p class="sc-prose" style="margin:6px 0 0">Proximity partition of the plane.
+      Georgy Voronoi, 1908. The cells re-balance as their seeds drift.</p>
+    </figcaption>
+  </figure>
+  <figure style="margin:0">
+    <div class="sc-stage sc-stage--square" id="morph"></div>
+    <figcaption style="padding:14px 2px">
+      <span class="la-label">Exhibit 12.2</span>
+      <p class="sc-prose" style="margin:6px 0 0">A sphere remembering other shapes.
+      Vertices ride layered noise between archetypes; walk around it with the pointer.</p>
+    </figcaption>
+  </figure>
+</div>
+
+<footer class="sc-footer">Living Assets · study 12.</footer>
+
+<script type="module">
+  import Voronoi from '../assets/simulations/voronoi.js';
+  import MeshMorphing from '../assets/simulations/mesh-morphing.js';
+  new Voronoi().init(document.getElementById('voronoi'), { params: { seeds: 34 } });
+  new MeshMorphing().init(document.getElementById('morph'));
+</script>
+</body></html>
