@@ -167,6 +167,7 @@ class AssetBase {
     if (this.sampler) clearInterval(this.sampler);
     this.raf = 0;
     this.sampler = 0;
+    this.metrics.interrupt();
   }
 }
 function downloadBlob(blob, filename) {

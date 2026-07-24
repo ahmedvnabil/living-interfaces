@@ -49,6 +49,12 @@ export class Metrics {
     return { fps: this.fps(), frameMs: +(this.times.at(-1) ?? 0).toFixed(1), heapMB, gpuEstimate, history: [...this.fpsHistory] };
   }
 
+  /** Call when the loop stops so the resume delta doesn't poison the average. */
+  interrupt(): void {
+    this.last = 0;
+    this.times = [];
+  }
+
   reset(): void {
     this.times = [];
     this.fpsHistory = [];

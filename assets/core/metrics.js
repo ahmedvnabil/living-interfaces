@@ -35,6 +35,11 @@ class Metrics {
     const gpuEstimate = this.tier === "webgl" ? mp > 2 ? "high" : "medium" : this.tier === "canvas2d" ? mp > 4 ? "medium" : "low" : "low";
     return { fps: this.fps(), frameMs: +(this.times.at(-1) ?? 0).toFixed(1), heapMB, gpuEstimate, history: [...this.fpsHistory] };
   }
+  /** Call when the loop stops so the resume delta doesn't poison the average. */
+  interrupt() {
+    this.last = 0;
+    this.times = [];
+  }
   reset() {
     this.times = [];
     this.fpsHistory = [];

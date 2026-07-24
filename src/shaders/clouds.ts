@@ -72,7 +72,7 @@ void main() {
   // tone: bg → fg with a restrained sun-edge accent
   float edge = smoothstep(0.42, 0.5, density) - smoothstep(0.5, 0.62, density);
   vec3 col = mix(uBg, uFg, cloud * 0.82);
-  col = mix(col, uAccent, edge * 0.10);
+  col = mix(col, uAccent, edge * 0.03);
   gl_FragColor = vec4(col, 1.0);
 }
 `;

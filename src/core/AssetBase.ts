@@ -194,6 +194,7 @@ export abstract class AssetBase implements LivingAsset {
     if (this.raf) cancelAnimationFrame(this.raf);
     if (this.sampler) clearInterval(this.sampler);
     this.raf = 0; this.sampler = 0;
+    this.metrics.interrupt();
   }
 }
 

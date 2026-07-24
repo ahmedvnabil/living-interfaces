@@ -6,7 +6,9 @@ function badge(text, state = "idle") {
 }
 function setBadge(el, text, state) {
   el.textContent = text;
-  el.className = `la-badge${state !== "idle" ? ` la-badge--${state}` : ""}`;
+  el.classList.add("la-badge");
+  el.classList.remove("la-badge--live", "la-badge--paused", "la-badge--error");
+  if (state !== "idle") el.classList.add(`la-badge--${state}`);
 }
 function metadataPanel(entries) {
   const dl = document.createElement("dl");

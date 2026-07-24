@@ -11,7 +11,10 @@ export function badge(text: string, state: BadgeState = 'idle'): HTMLSpanElement
 
 export function setBadge(el: HTMLSpanElement, text: string, state: BadgeState): void {
   el.textContent = text;
-  el.className = `la-badge${state !== 'idle' ? ` la-badge--${state}` : ''}`;
+  // preserve any layout classes the host added (e.g. la-card__status)
+  el.classList.add('la-badge');
+  el.classList.remove('la-badge--live', 'la-badge--paused', 'la-badge--error');
+  if (state !== 'idle') el.classList.add(`la-badge--${state}`);
 }
 
 export function metadataPanel(entries: Array<[string, string]>): HTMLDListElement {
