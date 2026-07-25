@@ -1,17 +1,75 @@
 {
-  "name": "living-assets",
-  "version": "1.0.0",
-  "description": "Living Assets Library — generative visualization OS for futuristic interfaces",
+  "name": "living-interfaces",
+  "version": "0.1.0",
+  "description": "Framework-free generative visuals for websites, interactive stories, and video",
   "type": "module",
+  "license": "MIT",
+  "author": "Ahmed Nabil",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmedvnabil/living-interfaces.git"
+  },
+  "homepage": "https://ahmedvnabil.github.io/living-interfaces/",
+  "bugs": {
+    "url": "https://github.com/ahmedvnabil/living-interfaces/issues"
+  },
+  "keywords": [
+    "generative-art",
+    "canvas",
+    "webgl",
+    "visualization",
+    "web-components"
+  ],
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "import": "./assets/index.js"
+    },
+    "./web-component": {
+      "types": "./types/web-component.d.ts",
+      "import": "./assets/web-component.js"
+    },
+    "./themes/*": "./themes/*",
+    "./assets/*": "./assets/*"
+  },
+  "files": [
+    "assets/",
+    "themes/",
+    "types/",
+    "vendor/",
+    "README.md",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "sideEffects": [
+    "./assets/web-component.js"
+  ],
   "scripts": {
     "build": "node build.mjs",
     "watch": "node build.mjs --watch",
     "docs": "node build.mjs && node scripts/gen-docs.mjs",
-    "serve": "python3 -m http.server 4173"
+    "serve": "python3 -m http.server 4173",
+    "test": "npm run build && node --test tests/*.test.mjs",
+    "test:coverage": "npm run build && node --test --experimental-test-coverage --test-coverage-include=assets/index.js --test-coverage-include=assets/presets.js --test-coverage-lines=80 tests/*.test.mjs",
+    "test:e2e": "npm run build && playwright test",
+    "typecheck": "tsc --noEmit",
+    "build:wp": "node scripts/build-wp-plugin.mjs",
+    "build:pages": "npm run docs && node scripts/build-pages.mjs",
+    "check": "npm run typecheck && npm run test:coverage"
   },
   "devDependencies": {
+    "@playwright/test": "^1.62.0",
     "@types/three": "^0.165.0",
-    "esbuild": "^0.21.0",
+    "esbuild": "^0.28.1",
+    "three": "^0.165.0",
+    "typescript": "^5.9.3"
+  },
+  "peerDependencies": {
     "three": "^0.165.0"
+  },
+  "peerDependenciesMeta": {
+    "three": {
+      "optional": true
+    }
   }
 }

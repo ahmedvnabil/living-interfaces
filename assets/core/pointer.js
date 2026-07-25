@@ -21,32 +21,32 @@ class PointerField {
       el.addEventListener(type, fn, opts);
       this.handlers.push([type, fn, opts]);
     };
-    on("pointermove", (e) => this.move(e.clientX, e.clientY));
-    on("pointerdown", (e) => {
+    on("pointermove", ((e) => this.move(e.clientX, e.clientY)));
+    on("pointerdown", ((e) => {
       this.down = true;
       this.move(e.clientX, e.clientY);
-    });
-    on("pointerup", () => {
+    }));
+    on("pointerup", (() => {
       this.down = false;
-    });
-    on("pointerenter", () => {
+    }));
+    on("pointerenter", (() => {
       this.active = true;
-    });
-    on("pointerleave", () => {
+    }));
+    on("pointerleave", (() => {
       this.active = false;
       this.down = false;
-    });
-    on("touchmove", (e) => {
+    }));
+    on("touchmove", ((e) => {
       const t = e.touches[0];
       if (t) {
         this.active = true;
         this.move(t.clientX, t.clientY);
       }
-    }, { passive: true });
-    on("touchend", () => {
+    }), { passive: true });
+    on("touchend", (() => {
       this.down = false;
       this.active = false;
-    }, { passive: true });
+    }), { passive: true });
   }
   move(cx, cy) {
     if (!this.el) return;

@@ -28,8 +28,7 @@ Set live with `asset.setParam(key, value)`, or pass `{ params: { lines: 1100 } }
 <link rel="stylesheet" href="/themes/tokens.css">
 <div id="stage" style="width:640px;height:480px"></div>
 <script type="importmap">
-{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.min.js",
-               "gsap": "https://cdn.jsdelivr.net/npm/gsap@3.12.5/index.js" } }
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.min.js" } }
 </script>
 <script type="module">
   import Asset from '/assets/simulations/wind-map.js';

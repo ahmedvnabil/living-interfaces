@@ -43,7 +43,7 @@ const LA = `${PLUGIN}/public/assets/la`;
 rmSync(LA, { recursive: true, force: true });
 mkdirSync(`${LA}`, { recursive: true });
 cpSync('assets', `${LA}`, { recursive: true });        // compiled modules (incl. core/player)
-cpSync('vendor', `${LA}/vendor`, { recursive: true }); // three, gsap, mp4-muxer
+cpSync('vendor', `${LA}/vendor`, { recursive: true }); // three, mp4-muxer
 console.log('library synced into plugin');
 
 // ---- zip ------------------------------------------------------------------

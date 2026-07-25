@@ -1,4 +1,10 @@
 node_modules/
-.DS_Store
-wp-plugin/living-assets-wp/public/assets/la/
+.claude/settings.local.json
+dist-pages/
+*.tgz
 wp-plugin/living-assets-wp.zip
+wp-plugin/living-assets-wp/public/assets/la/
+.DS_Store
+coverage/
+test-results/
+playwright-report/

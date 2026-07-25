@@ -1,4 +1,5 @@
 import { CATALOG } from "../core/catalog.js";
+import { PRESETS, getPreset } from "../presets.js";
 import { paramSlider, button } from "../components/controls.js";
 import { badge, setBadge, formatSeed } from "../components/panels.js";
 import { randomSeed } from "../utils/prng.js";
@@ -38,6 +39,10 @@ class Studio {
       sel.appendChild(o);
     }
     sel.addEventListener("change", () => this.load(sel.value));
+    const preset = $("presetSel");
+    preset.addEventListener("change", () => {
+      if (preset.value) this.applyPreset(preset.value);
+    });
     const res = $("resSel");
     for (const k of Object.keys(RESOLUTIONS)) {
       const o = document.createElement("option");
@@ -72,6 +77,7 @@ class Studio {
   async load(id) {
     if (this.busy) return;
     this.meta = CATALOG.find((m) => m.id === id) ?? CATALOG[0];
+    $("moduleSel").value = this.meta.id;
     this.asset?.destroy();
     this.timeline.clear();
     this.playT = 0;
@@ -82,8 +88,44 @@ class Studio {
     $("seedLabel").textContent = formatSeed(this.seed);
     $("modMeta").textContent = `${this.meta.subtitle} \xB7 ${this.meta.renderer}`;
     this.buildParamPanel();
+    this.refreshPresetSelect();
     this.renderLanes();
     this.setStatus("LIVE", "live");
+  }
+  refreshPresetSelect() {
+    const select = $("presetSel");
+    select.replaceChildren();
+    const empty = document.createElement("option");
+    empty.value = "";
+    empty.textContent = "Custom setup";
+    select.appendChild(empty);
+    for (const preset of PRESETS.filter(({ asset }) => asset === this.meta.id)) {
+      const option = document.createElement("option");
+      option.value = preset.id;
+      option.textContent = preset.name;
+      select.appendChild(option);
+    }
+    select.value = "";
+  }
+  applyPreset(id) {
+    if (!this.asset) return;
+    const preset = getPreset(id);
+    if (preset.asset !== this.meta.id) return;
+    this.seed = preset.seed;
+    for (const definition of this.meta.params) {
+      this.asset.setParam(definition.key, definition.value);
+    }
+    for (const [key, value] of Object.entries(preset.params)) {
+      this.asset.setParam(key, value);
+    }
+    this.asset.regenerate(this.seed);
+    if (preset.theme) {
+      this.theme = typeof preset.theme === "string" ? preset.theme : this.theme;
+      this.asset.setTheme(preset.theme);
+    }
+    $("seedLabel").textContent = formatSeed(this.seed);
+    this.buildParamPanel();
+    this.setStatus("PRESET APPLIED", "live");
   }
   buildParamPanel() {
     const box = $("params");

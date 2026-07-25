@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 /**
  * Script/style registration, and the import map that lets library modules
- * resolve `three` / `gsap` / `mp4-muxer` from the plugin's vendored copies.
+ * resolve `three` / `mp4-muxer` from the plugin's vendored copies.
  * No CDN requests are made.
  */
 class Assets {
@@ -60,7 +60,6 @@ class Assets {
 		$map    = [
 			'imports' => [
 				'three'     => $vendor . 'three.module.js',
-				'gsap'      => $vendor . 'gsap.min.js',
 				'mp4-muxer' => $vendor . 'mp4-muxer.min.mjs',
 			],
 		];

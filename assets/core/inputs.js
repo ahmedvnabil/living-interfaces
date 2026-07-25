@@ -32,6 +32,7 @@ class WebSocketInput extends PlaceholderInput {
     super();
     this.url = url;
   }
+  url;
   kind = "websocket";
 }
 class LiveDataInput extends PlaceholderInput {
@@ -39,6 +40,7 @@ class LiveDataInput extends PlaceholderInput {
     super();
     this.endpoint = endpoint;
   }
+  endpoint;
   kind = "live-data";
 }
 export {

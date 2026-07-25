@@ -101,6 +101,7 @@ function specimenCard(meta, index) {
         ["gpu", m.gpuEstimate]
       ]);
     }, 1e3);
+    void statTimer;
   }
   return card;
 }

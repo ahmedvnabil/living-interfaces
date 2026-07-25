@@ -84,6 +84,7 @@ class LSystemTrees extends Canvas2DAsset {
         ctx.fillStyle = rgba(this.theme.accent, 0.6);
         ctx.fillRect(s.x2 + ox2 - 1, s.y2 - 1, 2, 2);
       }
+      void cx;
     }
     ctx.lineWidth = 1;
     this.grown = until;

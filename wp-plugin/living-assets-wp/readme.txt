@@ -4,7 +4,7 @@ Tags: generative, visualization, canvas, animation, block
 Requires at least: 6.5
 Tested up to: 6.7
 Requires PHP: 8.0
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -29,7 +29,7 @@ and inherits your theme's colors through CSS custom properties.
 `[living_asset module="knowledge-graph" height="70vh" seed="42" params='{"nodes":80}']`
 
 All rendering is local: no CDN calls, no external requests, no tracking.
-Three.js and GSAP ship vendored inside the plugin and load only on pages that
+Three.js ships vendored inside the plugin and loads only on pages that
 use a module needing them.
 
 **Theming:** override any `--la-*` CSS variable (bg, fg, muted, faint, accent)
@@ -48,6 +48,13 @@ From the Living Assets Studio (bundled with the library): compose a module
 visually, press "Copy setup JSON", paste into the block.
 
 == Changelog ==
+
+= 1.1.0 =
+* Added interactive background mode, parent pointer tracking, z-index isolation,
+  and a Gutenberg background toggle.
+
+= 1.0.1 =
+* Changed plugin CSS defaults to zero specificity so theme palettes win.
 
 = 1.0.0 =
 * Initial release: 40 modules, Living Asset + Living Story blocks and shortcodes.

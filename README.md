@@ -1,32 +1,72 @@
-# Living Assets Library
+# Living Interfaces
 
-A framework-free operating system for futuristic interfaces: **40 generative
-visualization modules**, a **16-piece UI component library**, a specimen **gallery**
-and **25 showcase pages** — all pure TypeScript compiled to plain ES modules.
+[![CI](https://github.com/ahmedvnabil/living-interfaces/actions/workflows/ci.yml/badge.svg)](https://github.com/ahmedvnabil/living-interfaces/actions/workflows/ci.yml)
+[![MIT License](https://img.shields.io/badge/license-MIT-white.svg)](LICENSE)
+
+Framework-free generative visuals for websites, interactive stories, and video:
+**40 visualization modules**, **12 presets**, a **16-piece UI component library**,
+a browser **Studio**, and **25 showcase pages** — pure TypeScript compiled to
+plain ES modules.
 
 Aesthetic: scientific research lab. Near-black ground, white/soft-gray ink, one
 disciplined lime accent, IBM Plex Mono + Inter, hairline structure. No neon, no HUD
 props, no glow.
 
-## Quick start
+## Use it
+
+### Web Component
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ahmedvnabil/living-interfaces@v0.1.0/themes/tokens.css">
+<living-asset
+  type="flow-field"
+  preset="flow-field-calm"
+  seed="42"
+  style="display:block;width:100%;height:70vh"
+></living-asset>
+
+<script type="module" src="https://cdn.jsdelivr.net/gh/ahmedvnabil/living-interfaces@v0.1.0/assets/web-component.js"></script>
+```
+
+### JavaScript
 
 ```bash
-npm install        # esbuild + three types (dev only — runtime has zero npm deps)
-npm run docs       # compile /src → /assets and regenerate /docs
-npm run serve      # http://localhost:4173
+npm install github:ahmedvnabil/living-interfaces#v0.1.0
+```
+
+```js
+import { mount } from 'living-interfaces';
+
+const asset = await mount('#hero', {
+  asset: 'flow-field',
+  preset: 'flow-field-calm',
+  theme: 'dark',
+});
+
+// asset.pause() · resume() · setTheme('light') · destroy()
+```
+
+Three.js is an optional peer dependency used by only three WebGL modules.
+Canvas 2D, SVG, and worker modules have no runtime dependency.
+
+### Develop locally
+
+```bash
+npm install
+npm run check
+npm run serve
 ```
 
 Open `index.html` for the 40-specimen gallery, `examples/index.html` for the
 showcases, `docs/index.html` for documentation.
 
-## Drop a module into any site
+## Use a standalone module without npm
 
 ```html
 <link rel="stylesheet" href="/themes/tokens.css">
 <div id="stage" style="width:640px;height:480px"></div>
 <script type="importmap">
-{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.min.js",
-               "gsap": "https://cdn.jsdelivr.net/npm/gsap@3.12.5/index.js" } }
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.min.js" } }
 </script>
 <script type="module">
   import FlowField from '/assets/simulations/flow-field.js';
@@ -38,7 +78,7 @@ Only WebGL modules (`terrain-generator`, `mesh-morphing`, `procedural-clouds`) t
 `three`; everything else needs no import map at all. Offline? Point the import map at
 `/vendor/three.module.js`.
 
-## The contract
+## Public contract
 
 Every asset implements:
 
@@ -63,11 +103,23 @@ sources are stubbed behind one `InputSource` interface in `src/core/inputs.ts`.
 src/          TypeScript source (core, simulations, components, themes, shaders, workers, utils)
 assets/       compiled ES modules — the thing you copy into other projects
 themes/       tokens.css (dark + light) · lab.css (components, specimen cards)
-vendor/       offline copies of three + gsap
+vendor/       offline copies of Three.js + mp4-muxer, with third-party notices
 examples/     25 application studies
 docs/         generated documentation
 index.html    specimen gallery
 ```
+
+## Open-source integrations
+
+- **Web Component:** import `living-interfaces/web-component`.
+- **Vanilla JavaScript:** use `mount()` or `createAsset()`.
+- **WordPress:** build the Gutenberg block and shortcode ZIP with
+  `npm run build:wp`.
+- **Video:** open `studio.html` and export deterministic MP4/WebM/PNG output.
+- **Interactive stories:** compose plain JSON scenes with `LivingStory`.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) to add an asset and
+[ROADMAP.md](ROADMAP.md) for the intentionally bounded next releases.
 
 ## Studio — video export
 

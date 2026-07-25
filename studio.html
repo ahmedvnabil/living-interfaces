@@ -1,10 +1,10 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Living Assets — Studio</title>
+<title>Living Interfaces — Studio</title>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="themes/tokens.css">
 <link rel="stylesheet" href="themes/lab.css">
-<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.min.js","gsap":"https://cdn.jsdelivr.net/npm/gsap@3.12.5/index.js","mp4-muxer":"./vendor/mp4-muxer.min.mjs"}}</script>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.min.js","mp4-muxer":"./vendor/mp4-muxer.min.mjs"}}</script>
 <style>
   .st-app { display: grid; grid-template-columns: 300px 1fr; grid-template-rows: auto 1fr auto; height: 100vh; }
   .st-top { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; padding: 10px 16px; border-bottom: var(--la-border); gap: 12px; }
@@ -34,7 +34,7 @@
   <div class="st-top">
     <div style="display:flex;gap:14px;align-items:center">
       <a class="la-link" href="index.html"><span class="la-label">← Catalog</span></a>
-      <span class="la-label">Living Assets Studio</span>
+      <span class="la-label">Living Interfaces Studio · v0.1</span>
     </div>
     <div style="display:flex;gap:8px;align-items:center">
       <span id="statusBox"></span>
@@ -47,6 +47,10 @@
       <span class="la-label">Module</span>
       <select id="moduleSel" aria-label="Module"></select>
       <span class="la-label" id="modMeta" style="text-transform:none;letter-spacing:0"></span>
+    </div>
+    <div class="st-field">
+      <span class="la-label">Preset</span>
+      <select id="presetSel" aria-label="Preset"></select>
     </div>
     <div class="st-field">
       <span class="la-label">Resolution</span>
