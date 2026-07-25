@@ -66,13 +66,19 @@ export async function renderOffline(
     void (async () => {
       const frames = Math.round(seconds * fps);
       const dt = 1 / fps;
+      const budget = 1000 / fps;
       for (let i = 0; i <= frames; i++) {
+        const frameStart = performance.now();
         applyFrame(i * dt);
         asset.renderFrame(dt);
         track.requestFrame();
         onProgress(i / frames);
-        // yield so the recorder ingests the frame and the UI stays alive
-        if (i % 4 === 0) await new Promise((r) => setTimeout(r, 0));
+        // Yield EVERY frame — captureStream snapshots on task boundaries, so
+        // skipping the yield drops frames. Pace to the target fps when the
+        // scene renders faster than realtime, so timestamps come out correct;
+        // slower scenes keep every frame (retime in an editor if needed).
+        const elapsed = performance.now() - frameStart;
+        await new Promise((r) => setTimeout(r, Math.max(budget - elapsed, 0)));
       }
       await new Promise((r) => setTimeout(r, 200));
       rec.stop();

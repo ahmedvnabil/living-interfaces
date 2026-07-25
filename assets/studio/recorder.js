@@ -46,12 +46,15 @@ async function renderOffline(asset, canvas, seconds, fps, filename, applyFrame, 
     void (async () => {
       const frames = Math.round(seconds * fps);
       const dt = 1 / fps;
+      const budget = 1e3 / fps;
       for (let i = 0; i <= frames; i++) {
+        const frameStart = performance.now();
         applyFrame(i * dt);
         asset.renderFrame(dt);
         track.requestFrame();
         onProgress(i / frames);
-        if (i % 4 === 0) await new Promise((r) => setTimeout(r, 0));
+        const elapsed = performance.now() - frameStart;
+        await new Promise((r) => setTimeout(r, Math.max(budget - elapsed, 0)));
       }
       await new Promise((r) => setTimeout(r, 200));
       rec.stop();
