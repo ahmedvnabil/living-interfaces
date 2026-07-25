@@ -1,6 +1,6 @@
 {
   "name": "living-interfaces",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Framework-free generative visuals for websites, interactive stories, and video",
   "type": "module",
   "license": "MIT",

@@ -3,100 +3,126 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Living Interfaces — Specimen Gallery</title>
-<meta name="description" content="A modular library of 40 generative visualization instruments for scientific, premium interfaces.">
+<title>Living Interfaces — Generative systems for the web</title>
+<meta name="description" content="Forty production-ready generative systems for websites, interactive stories, and video.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="themes/tokens.css">
-<link rel="stylesheet" href="themes/lab.css">
+<link rel="stylesheet" href="themes/site.css">
 <script type="importmap">
-{
-  "imports": {
-    "three": "https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.min.js"
-  }
-}
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.min.js"}}
 </script>
-<style>
-  /* page-level layout only; all component styling lives in lab.css */
-  .hero { padding: 96px 0 64px; border-bottom: var(--la-border); position: relative; overflow: hidden; }
-  .hero__bg { position: absolute; inset: 0; z-index: 0; }
-  .hero__inner { position: relative; z-index: 1; }
-  .hero h1 { font-size: clamp(2rem, 6vw, 3.6rem); font-weight: 700; letter-spacing: -0.03em; margin: 12px 0 16px; max-width: 720px; }
-  .hero p.lede { color: var(--la-muted); max-width: 560px; margin: 0 0 24px; }
-  .toolbar { position: sticky; top: 0; z-index: 20; background: var(--la-bg); border-bottom: var(--la-border); }
-  .toolbar__inner { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; gap: 16px; flex-wrap: wrap; }
-  .catalog { padding: 48px 0 96px; }
-  footer.colophon { border-top: var(--la-border); padding: 32px 0 64px; color: var(--la-muted); font-size: var(--la-text-sm); }
-</style>
 </head>
-<body class="la-body">
+<body>
+<nav class="site-nav" aria-label="Primary">
+  <a class="wordmark" href="index.html"><span class="mark">LI</span><span>Living<br>Interfaces</span></a>
+  <div class="nav-links">
+    <a href="catalog.html">Explore</a>
+    <a href="studio.html">Studio</a>
+    <a href="docs/index.html">Docs</a>
+    <a href="https://github.com/ahmedvnabil/living-interfaces">GitHub ↗</a>
+  </div>
+</nav>
 
-<div class="toolbar">
-  <div class="la-container toolbar__inner">
-    <span class="la-label">Living Interfaces · Specimen Catalog · v0.1</span>
-    <div style="display:flex;gap:8px;align-items:center">
-      <span class="la-label" id="count"></span>
-      <button class="la-btn" id="themeBtn" aria-label="Toggle color theme">Light mode</button>
+<main>
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="live-dot"></span> Open-source generative engine · v0.2</p>
+      <h1>Interfaces should<br>never stand still.</h1>
+      <p class="hero-lede">Forty living systems for websites, stories, and film. Deterministic, framework-free, and ready to ship.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="catalog.html">Explore 40 systems <span>→</span></a>
+        <a class="button" href="studio.html">Open Studio</a>
+      </div>
+      <dl class="hero-facts">
+        <div><dt>Runtime</dt><dd>Canvas / WebGL</dd></div>
+        <div><dt>Control</dt><dd>Seeded + live</dd></div>
+        <div><dt>License</dt><dd>MIT</dd></div>
+      </dl>
     </div>
-  </div>
-</div>
-
-<header class="hero">
-  <div class="hero__bg" id="heroBg" aria-hidden="true"></div>
-  <div class="la-container hero__inner">
-    <span class="la-label">Generative Systems Laboratory</span>
-    <h1>An operating system for living interfaces.</h1>
-    <p class="lede">Forty self-contained generative instruments — fields, swarms, lattices,
-    networks and growth processes — each one droppable into any page with a single
-    <code class="la-mono">init(element)</code>.</p>
-    <div style="display:flex;gap:8px;flex-wrap:wrap">
-      <a class="la-btn la-btn--primary" href="#gallery" style="text-decoration:none">Browse specimens</a>
-      <a class="la-btn" href="studio.html" style="text-decoration:none">Studio</a>
-      <a class="la-btn" href="docs/index.html" style="text-decoration:none">Documentation</a>
-      <a class="la-btn" href="examples/index.html" style="text-decoration:none">Showcases</a>
+    <div class="hero-visual" data-living-stage="hero" aria-label="Live Flow Field preview">
+      <div class="stage-hud"><span>01 / FLOW FIELD</span><span class="stage-status">LIVE</span></div>
+      <div class="axis axis-x"></div><div class="axis axis-y"></div>
+      <span class="coordinate coordinate-a">X 42.71</span>
+      <span class="coordinate coordinate-b">Y 08.20</span>
     </div>
-  </div>
-</header>
+  </section>
 
-<main class="catalog">
-  <div class="la-container">
-    <div id="gallery"></div>
-  </div>
+  <section class="metrics" aria-label="Library statistics">
+    <div><strong>40</strong><span>generative systems</span></div>
+    <div><strong>12</strong><span>curated presets</span></div>
+    <div><strong>0</strong><span>framework lock-in</span></div>
+    <div><strong>4K</strong><span>video export</span></div>
+  </section>
+
+  <section class="systems" id="systems">
+    <header class="section-head">
+      <div><p class="eyebrow">Selected instruments</p><h2>Built to be used,<br>not just watched.</h2></div>
+      <p>Every system exposes parameters, deterministic seeds, lifecycle controls, and export. Use one as atmosphere—or make it the interface.</p>
+    </header>
+    <div class="system-grid">
+      <article class="system-card featured">
+        <div class="system-stage" data-living-stage="terrain"><span class="system-index">02</span></div>
+        <div class="system-copy"><div><p class="eyebrow">WebGL / Topography</p><h3>Survey Terrain</h3></div><p>Procedural landforms for spatial narratives, data products, and cinematic transitions.</p></div>
+      </article>
+      <article class="system-card">
+        <div class="system-stage" data-living-stage="contour"><span class="system-index">03</span></div>
+        <div class="system-copy"><div><p class="eyebrow">Canvas / Mapping</p><h3>Contour Atlas</h3></div><p>Animated isolines for data-led editorial surfaces.</p></div>
+      </article>
+      <article class="system-card">
+        <div class="system-stage" data-living-stage="boids"><span class="system-index">04</span></div>
+        <div class="system-copy"><div><p class="eyebrow">Canvas / Agents</p><h3>Gentle Flock</h3></div><p>Collective motion for ambient product moments.</p></div>
+      </article>
+    </div>
+    <a class="text-link" href="catalog.html">View the complete system catalog <span>→</span></a>
+  </section>
+
+  <section class="workflow">
+    <div class="workflow-copy">
+      <p class="eyebrow">One engine · three outputs</p>
+      <h2>From browser<br>to final frame.</h2>
+      <ol>
+        <li><span>01</span><div><strong>Choose a system</strong><p>Start from a curated preset or one of forty instruments.</p></div></li>
+        <li><span>02</span><div><strong>Direct the motion</strong><p>Tune parameters and lock the exact result with a seed.</p></div></li>
+        <li><span>03</span><div><strong>Ship anywhere</strong><p>Embed HTML, install WordPress, or export MP4 and WebM.</p></div></li>
+      </ol>
+      <a class="button primary" href="studio.html">Create in Studio <span>→</span></a>
+    </div>
+    <div class="code-panel">
+      <div class="code-head"><span>QUICKSTART.JS</span><button id="copyCode" type="button">COPY</button></div>
+      <pre><code><span class="muted">import</span> { mount } <span class="muted">from</span>
+  <span class="green">'living-interfaces'</span>;
+
+<span class="muted">const</span> asset = <span class="green">await</span> mount(
+  <span class="green">'#hero'</span>,
+  {
+    asset: <span class="green">'flow-field'</span>,
+    preset: <span class="green">'flow-field-calm'</span>
+  }
+);
+
+<span class="muted">// Lifecycle included</span>
+asset.pause();
+asset.resume();
+asset.destroy();</code></pre>
+      <div class="code-foot"><span>NPM + CDN + WEB COMPONENT</span><span>02.1 KB CORE</span></div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <p class="eyebrow">The library is open</p>
+    <h2>Make the web<br>feel alive.</h2>
+    <div><a class="button primary" href="catalog.html">Explore the systems <span>→</span></a><a class="button" href="https://github.com/ahmedvnabil/living-interfaces">Star on GitHub ↗</a></div>
+  </section>
 </main>
 
-<footer class="colophon">
-  <div class="la-container">
-    <span class="la-label">Living Interfaces</span>
-    <p>Pure TypeScript · Canvas 2D · WebGL / Three.js · Web Workers · No frameworks.
-    Every specimen implements init / destroy / pause / resume / resize / setTheme / setData.</p>
-  </div>
+<footer>
+  <a class="wordmark" href="index.html"><span class="mark">LI</span><span>Living<br>Interfaces</span></a>
+  <p>Open-source generative infrastructure<br>for expressive digital products.</p>
+  <div><a href="docs/index.html">Documentation</a><a href="examples/index.html">Examples</a><a href="SECURITY.md">Security</a></div>
+  <span class="eyebrow">MIT · 2026</span>
 </footer>
-
-<div id="grain" style="position:fixed;inset:0;pointer-events:none;z-index:50"></div>
-
-<script type="module">
-  import './assets/gallery.js';
-  import LivingBackground from './assets/simulations/living-background.js';
-  import { setPageTheme } from './assets/gallery.js';
-
-  // hero ambient layer
-  const heroBg = document.getElementById('heroBg');
-  const bg = new LivingBackground();
-  bg.init(heroBg, { params: { presence: 0.14, motes: 50 } });
-
-  // module count
-  document.getElementById('count').textContent = '40 SPECIMENS';
-
-  // theme toggle
-  const btn = document.getElementById('themeBtn');
-  let theme = 'dark';
-  btn.addEventListener('click', () => {
-    theme = theme === 'dark' ? 'light' : 'dark';
-    setPageTheme(theme);
-    bg.setTheme(theme);
-    btn.textContent = theme === 'dark' ? 'Light mode' : 'Dark mode';
-  });
-</script>
+<script type="module" src="assets/landing.js"></script>
 </body>
 </html>

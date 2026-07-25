@@ -44,5 +44,5 @@ export async function mount(
   return asset;
 }
 
-export const VERSION = '0.1.0';
+export const VERSION = '0.2.0';
 export const ASSET_COUNT = CATALOG.length;

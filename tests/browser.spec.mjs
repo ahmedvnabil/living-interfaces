@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 
-test('gallery exposes all assets and renders without console errors', async ({ page }) => {
+test('landing communicates the product and renders live systems without console errors', async ({ page }) => {
   const errors = [];
   page.on('console', (message) => {
     if (message.type() === 'error') errors.push(message.text());
@@ -8,6 +8,21 @@ test('gallery exposes all assets and renders without console errors', async ({ p
   page.on('pageerror', (error) => errors.push(error.message));
 
   await page.goto('/');
+  await expect(page.getByRole('heading', { name: /interfaces should never stand still/i })).toBeVisible();
+  await expect(page.getByRole('link', { name: /explore 40 systems/i })).toBeVisible();
+  await expect(page.locator('[data-living-stage] canvas')).toHaveCount(4);
+  await expect(page.getByText('40', { exact: true }).first()).toBeVisible();
+  expect(errors).toEqual([]);
+});
+
+test('catalog exposes all assets and renders without console errors', async ({ page }) => {
+  const errors = [];
+  page.on('console', (message) => {
+    if (message.type() === 'error') errors.push(message.text());
+  });
+  page.on('pageerror', (error) => errors.push(error.message));
+
+  await page.goto('/catalog.html');
   const cards = page.locator('main article');
   await expect(cards).toHaveCount(40);
   await expect(page.getByText('40 SPECIMENS', { exact: true })).toBeVisible();

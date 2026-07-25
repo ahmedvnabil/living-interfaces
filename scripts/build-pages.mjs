@@ -2,7 +2,7 @@ import { cpSync, mkdirSync, rmSync } from 'node:fs';
 
 const output = 'dist-pages';
 const directories = ['assets', 'docs', 'examples', 'themes', 'vendor'];
-const files = ['index.html', 'studio.html', 'README.md', 'LICENSE'];
+const files = ['index.html', 'catalog.html', 'studio.html', 'README.md', 'LICENSE'];
 
 rmSync(output, { recursive: true, force: true });
 mkdirSync(output, { recursive: true });

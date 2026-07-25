@@ -17,7 +17,7 @@ props, no glow.
 ### Web Component
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ahmedvnabil/living-interfaces@v0.1.0/themes/tokens.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ahmedvnabil/living-interfaces@v0.2.0/themes/tokens.css">
 <living-asset
   type="flow-field"
   preset="flow-field-calm"
@@ -25,13 +25,13 @@ props, no glow.
   style="display:block;width:100%;height:70vh"
 ></living-asset>
 
-<script type="module" src="https://cdn.jsdelivr.net/gh/ahmedvnabil/living-interfaces@v0.1.0/assets/web-component.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/gh/ahmedvnabil/living-interfaces@v0.2.0/assets/web-component.js"></script>
 ```
 
 ### JavaScript
 
 ```bash
-npm install github:ahmedvnabil/living-interfaces#v0.1.0
+npm install github:ahmedvnabil/living-interfaces#v0.2.0
 ```
 
 ```js
