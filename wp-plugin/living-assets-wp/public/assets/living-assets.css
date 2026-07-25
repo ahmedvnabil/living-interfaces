@@ -1,0 +1,37 @@
+/* Living Assets — WordPress embed styles.
+   The design tokens double as the theming API: override any --la-* variable in
+   your theme (Appearance → Additional CSS) and every module recolors live. */
+
+:root {
+  --la-bg: #0a0b0c;
+  --la-fg: #f4f5f4;
+  --la-muted: #8a9088;
+  --la-faint: #22262a;
+  --la-accent: #c6ff4d;
+  --la-accent2: #5f7a52;
+}
+
+[data-theme="light"], .is-light-theme {
+  --la-bg: #f6f7f5;
+  --la-fg: #111412;
+  --la-muted: #5c635c;
+  --la-faint: #dde1dc;
+  --la-accent: #79a20b;
+  --la-accent2: #a8bd8a;
+}
+
+.la-embed {
+  position: relative;
+  overflow: hidden;
+  background: var(--la-bg);
+  /* direction-neutral: canvases have no text flow, safe in RTL themes */
+  direction: ltr;
+}
+.la-embed > canvas { display: block; width: 100%; height: 100%; }
+
+.la-story {
+  position: relative;
+  background: var(--la-bg);
+  color: var(--la-fg);
+}
+.la-story h2 { color: var(--la-fg); }

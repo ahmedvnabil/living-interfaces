@@ -1,0 +1,20 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "lawp/living-asset",
+  "title": "Living Asset",
+  "category": "media",
+  "icon": "chart-line",
+  "description": "A live generative visualization — flow fields, physarum, terrain, graphs and 36 more.",
+  "keywords": [ "generative", "canvas", "visualization", "animation" ],
+  "textdomain": "living-assets-wp",
+  "attributes": {
+    "module": { "type": "string", "default": "flow-field" },
+    "height": { "type": "string", "default": "480px" },
+    "seed":   { "type": "string", "default": "" },
+    "params": { "type": "string", "default": "" },
+    "theme":  { "type": "string", "default": "" }
+  },
+  "supports": { "align": [ "wide", "full" ], "anchor": true },
+  "editorScript": "file:./index.js"
+}

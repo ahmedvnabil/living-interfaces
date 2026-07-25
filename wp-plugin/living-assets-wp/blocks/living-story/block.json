@@ -1,0 +1,16 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "lawp/living-story",
+  "title": "Living Story",
+  "category": "media",
+  "icon": "book-alt",
+  "description": "A scroll-driven interactive film: scenes are live simulations whose parameters follow the reader's scroll.",
+  "keywords": [ "scrollytelling", "interactive", "story", "film" ],
+  "textdomain": "living-assets-wp",
+  "attributes": {
+    "scenes": { "type": "string", "default": "" }
+  },
+  "supports": { "align": [ "full" ] },
+  "editorScript": "file:./index.js"
+}

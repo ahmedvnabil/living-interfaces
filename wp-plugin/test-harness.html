@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- Test harness: replicates the exact markup the plugin outputs in WordPress.
+     Not part of the shipped zip. -->
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Living Assets WP — Test Harness (RTL)</title>
+<!-- what class-assets.php prints in wp_head -->
+<script type="importmap">{"imports":{
+  "three":"/wp-plugin/living-assets-wp/public/assets/la/vendor/three.module.js",
+  "gsap":"/wp-plugin/living-assets-wp/public/assets/la/vendor/gsap.min.js",
+  "mp4-muxer":"/wp-plugin/living-assets-wp/public/assets/la/vendor/mp4-muxer.min.mjs"}}</script>
+<link rel="stylesheet" href="/wp-plugin/living-assets-wp/public/assets/living-assets.css">
+<style>body{margin:0;font-family:system-ui;background:#111;color:#eee}.wrap{max-width:900px;margin:0 auto;padding:24px}h2{font-weight:600}</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>محاكاة صفحة ووردبريس RTL</h1>
+
+  <h2>[living_asset module="flow-field" seed="42" params='{"count":1800}']</h2>
+  <div class="la-embed" style="height:340px" data-la-module="flow-field" data-la-seed="42" data-la-params='{"count":1800}' role="img" aria-label="Generative visualization: Flow Field"></div>
+
+  <h2>[living_asset module="terrain-generator"] — WebGL عبر import map</h2>
+  <div class="la-embed" style="height:340px" data-la-module="terrain-generator" role="img" aria-label="Generative visualization: Terrain Generator"></div>
+
+  <h2>[living_story] — فيلم من مشهدين</h2>
+  <div class="la-story" data-la-story><script type="application/json">[
+    {"module":"simulations/noise-field.js","headline":"أولًا: الحقل","body":"اسكرول لتكبير الإزاحة.","seed":11,"from":{"amp":2},"to":{"amp":26}},
+    {"module":"simulations/boids.js","headline":"ثانيًا: السرب","body":"ثلاث قواعد تصنع مجتمعًا.","seed":22,"from":{"count":80},"to":{"count":380}}
+  ]</script></div>
+
+  <p style="height:40vh">محتوى بعد القصة…</p>
+</div>
+<script type="module" src="/wp-plugin/living-assets-wp/public/assets/mount.js"></script>
+</body>
+</html>

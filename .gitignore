@@ -1,2 +1,4 @@
 node_modules/
 .DS_Store
+wp-plugin/living-assets-wp/public/assets/la/
+wp-plugin/living-assets-wp.zip
