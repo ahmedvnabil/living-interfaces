@@ -2,15 +2,33 @@
 
 [![CI](https://github.com/ahmedvnabil/living-interfaces/actions/workflows/ci.yml/badge.svg)](https://github.com/ahmedvnabil/living-interfaces/actions/workflows/ci.yml)
 [![MIT License](https://img.shields.io/badge/license-MIT-white.svg)](LICENSE)
+[![Release](https://img.shields.io/github/v/release/ahmedvnabil/living-interfaces?color=c6ff4d&label=release)](https://github.com/ahmedvnabil/living-interfaces/releases/latest)
+[![Live site](https://img.shields.io/badge/live-site-c6ff4d?logo=githubpages&logoColor=111)](https://ahmedvnabil.github.io/living-interfaces/)
+
+<p align="center">
+  <a href="https://ahmedvnabil.github.io/living-interfaces/">
+    <img src="docs/media/living-interfaces-demo.gif" alt="Living Interfaces product site with a live generative flow field" width="960">
+  </a>
+</p>
 
 Framework-free generative visuals for websites, interactive stories, and video:
 **40 visualization modules**, **12 presets**, a **16-piece UI component library**,
 a browser **Studio**, and **25 showcase pages** — pure TypeScript compiled to
 plain ES modules.
 
-Aesthetic: scientific research lab. Near-black ground, white/soft-gray ink, one
-disciplined lime accent, IBM Plex Mono + Inter, hairline structure. No neon, no HUD
-props, no glow.
+**[Explore the live library](https://ahmedvnabil.github.io/living-interfaces/)** ·
+**[Open Studio](https://ahmedvnabil.github.io/living-interfaces/studio.html)** ·
+**[Browse all 40 systems](https://ahmedvnabil.github.io/living-interfaces/catalog.html)**
+
+## The system catalog
+
+<p align="center">
+  <img src="docs/media/living-systems-demo.gif" alt="Animated previews of Survey Terrain, Contour Atlas, and Gentle Flock" width="960">
+</p>
+
+Each instrument is a real, interactive runtime—not a prerecorded background.
+Tune its parameters, preserve an exact take with a deterministic seed, then embed
+it, install it in WordPress, or export a video.
 
 ## Use it
 
@@ -57,8 +75,9 @@ npm run check
 npm run serve
 ```
 
-Open `index.html` for the 40-specimen gallery, `examples/index.html` for the
-showcases, `docs/index.html` for documentation.
+Open `index.html` for the product site, `catalog.html` for the 40-system
+laboratory, `examples/index.html` for showcases, and `docs/index.html` for
+documentation.
 
 ## Use a standalone module without npm
 
@@ -106,7 +125,8 @@ themes/       tokens.css (dark + light) · lab.css (components, specimen cards)
 vendor/       offline copies of Three.js + mp4-muxer, with third-party notices
 examples/     25 application studies
 docs/         generated documentation
-index.html    specimen gallery
+index.html    product landing page
+catalog.html  40-system specimen laboratory
 ```
 
 ## Open-source integrations
