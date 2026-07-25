@@ -20,10 +20,22 @@ function mountAsset(el) {
       if (params && typeof params === 'object') options.params = params;
     } catch { /* ignore malformed params */ }
   }
+  const isBg = el.dataset.laBg === '1';
+  const parent = el.parentElement;
+  if (isBg && parent) {
+    // the layer sits at z-index:-1 inside the parent's own stacking context
+    parent.classList.add('la-has-living-bg');
+  }
   import(new URL(`simulations/${module}.js`, LIB))
     .then((mod) => {
       const asset = new mod.default();
       asset.init(el, options);
+      if (isBg && parent) {
+        // canvas has pointer-events:none; track the pointer on the parent so
+        // the background still reacts while content stays fully clickable
+        asset.pointer.detach();
+        asset.pointer.attach(parent);
+      }
       el.laAsset = asset; // theme switchers / SPAs can reach the instance
     })
     .catch((err) => console.error(`[living-assets] ${module} failed to mount`, err));

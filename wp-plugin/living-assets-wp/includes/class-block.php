@@ -40,8 +40,9 @@ class Block {
 				'height' => $attributes['height'] ?? '480px',
 				'seed'   => $attributes['seed'] ?? '',
 				'params' => $attributes['params'] ?? '',
-				'theme'  => $attributes['theme'] ?? '',
-				'class'  => $attributes['className'] ?? '',
+				'theme'      => $attributes['theme'] ?? '',
+				'class'      => $attributes['className'] ?? '',
+				'background' => ! empty( $attributes['background'] ) ? '1' : '',
 			]
 		);
 	}

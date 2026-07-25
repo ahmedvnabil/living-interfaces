@@ -3,7 +3,7 @@
 	const { registerBlockType } = wp.blocks;
 	const { createElement: el } = wp.element;
 	const { InspectorControls, useBlockProps } = wp.blockEditor;
-	const { PanelBody, SelectControl, TextControl, TextareaControl } = wp.components;
+	const { PanelBody, SelectControl, TextControl, TextareaControl, ToggleControl } = wp.components;
 	const { __ } = wp.i18n;
 
 	const catalog = ( window.LAWP_CATALOG && window.LAWP_CATALOG.modules ) || {};
@@ -62,6 +62,12 @@
 								{ value: 'light', label: __( 'Light', 'living-assets-wp' ) },
 							],
 							onChange: function ( v ) { props.setAttributes( { theme: v } ); },
+						} ),
+						el( ToggleControl, {
+							label: __( 'Background mode', 'living-assets-wp' ),
+							help: __( 'Fills the parent container and renders behind its content.', 'living-assets-wp' ),
+							checked: !! a.background,
+							onChange: function ( v ) { props.setAttributes( { background: v } ); },
 						} ),
 						el( TextareaControl, {
 							label: __( 'Parameters (JSON, from Studio "Copy setup JSON")', 'living-assets-wp' ),

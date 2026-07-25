@@ -31,6 +31,18 @@
 }
 .la-embed > canvas { display: block; width: 100%; height: 100%; }
 
+/* Background mode: fills the parent container and paints BEHIND its content.
+   z-index:-1 inside the parent's own stacking context (isolation:isolate on
+   the parent, set by mount.js) keeps the layer above the parent background
+   but below every child — no changes needed on the content itself. */
+.la-embed--bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none; /* clicks pass through; pointer physics listen on the parent */
+}
+.la-has-living-bg { position: relative; isolation: isolate; }
+
 .la-story {
   position: relative;
   background: var(--la-bg);

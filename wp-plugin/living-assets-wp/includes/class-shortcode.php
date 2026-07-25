@@ -53,29 +53,32 @@ class Shortcode {
 			: $this->sanitize_params( (string) ( $args['params'] ?? '' ) );
 		$theme  = in_array( $args['theme'] ?? '', [ 'dark', 'light' ], true ) ? $args['theme'] : '';
 		$class  = sanitize_html_class( (string) ( $args['class'] ?? '' ) );
+		$is_bg  = ! empty( $args['background'] ) && '0' !== (string) $args['background'];
 
 		return sprintf(
-			'<div class="la-embed %1$s" style="height:%2$s" data-la-module="%3$s"%4$s%5$s%6$s aria-label="%7$s" role="img"></div>',
-			esc_attr( $class ),
-			esc_attr( $height ),
+			'<div class="la-embed %1$s" style="%2$s" data-la-module="%3$s"%4$s%5$s%6$s%8$s aria-label="%7$s" role="img"></div>',
+			esc_attr( trim( $class . ( $is_bg ? ' la-embed--bg' : '' ) ) ),
+			$is_bg ? '' : 'height:' . esc_attr( $height ),
 			esc_attr( $module ),
 			'' !== $seed ? ' data-la-seed="' . esc_attr( (string) $seed ) . '"' : '',
 			! empty( $params ) ? " data-la-params='" . esc_attr( wp_json_encode( $params ) ) . "'" : '',
 			'' !== $theme ? ' data-la-theme="' . esc_attr( $theme ) . '"' : '',
 			/* translators: %s: module name */
-			esc_attr( sprintf( __( 'Generative visualization: %s', 'living-assets-wp' ), lawp_module_label( $module ) ) )
+			esc_attr( sprintf( __( 'Generative visualization: %s', 'living-assets-wp' ), lawp_module_label( $module ) ) ),
+			$is_bg ? ' data-la-bg="1"' : ''
 		);
 	}
 
 	public function render_asset( $atts ): string {
 		$atts = shortcode_atts(
 			[
-				'module' => '',
-				'height' => '480px',
-				'seed'   => '',
-				'params' => '',
-				'theme'  => '',
-				'class'  => '',
+				'module'     => '',
+				'height'     => '480px',
+				'seed'       => '',
+				'params'     => '',
+				'theme'      => '',
+				'class'      => '',
+				'background' => '',
 			],
 			$atts,
 			'living_asset'
