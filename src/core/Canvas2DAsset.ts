@@ -22,10 +22,11 @@ export abstract class Canvas2DAsset extends AssetBase {
   }
 
   protected onResize(): void {
-    const r = this.container.getBoundingClientRect();
+    // offsetWidth/Height = layout size, immune to CSS transforms (Studio scales
+    // the stage visually while the canvas renders at full export resolution)
     const dpr = this.dpr();
-    this.w = Math.max(1, r.width);
-    this.h = Math.max(1, r.height);
+    this.w = Math.max(1, this.container.offsetWidth);
+    this.h = Math.max(1, this.container.offsetHeight);
     this.canvas.width = Math.round(this.w * dpr);
     this.canvas.height = Math.round(this.h * dpr);
     this.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);

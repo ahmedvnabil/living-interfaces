@@ -69,6 +69,28 @@ docs/         generated documentation
 index.html    specimen gallery
 ```
 
+## Studio — video export
+
+Open `studio.html`: pick any module, choose a resolution (HD / Full HD / QHD / square /
+9:16 reels), keyframe parameters on the timeline (⏺ at the playhead, smoothstep
+interpolation), then export:
+
+- **Render WebM · frame-accurate** — steps the simulation offline at a fixed timestep
+  and captures every frame via `captureStream(0)` + `requestFrame()`. Never drops
+  frames, regardless of resolution or machine speed. (Worker-rendered modules use
+  realtime mode instead.)
+- **Record realtime** — live capture of the running canvas, pointer interaction included.
+- **PNG frame** and **Copy setup JSON** (module + seed + params + timeline) for reuse.
+
+Seeded determinism means a take can be reproduced exactly.
+
+## LivingStory — interactive films
+
+`assets/player/living-story.js` turns scenes (plain JSON: module, headline, body,
+`from`/`to` params, seed) into a scroll-driven film: scroll interpolates parameters,
+scenes crossfade, and the viewer's pointer still disturbs every simulation.
+See `examples/interactive-film.html` for a five-scene demo.
+
 ## Theming
 
 All color flows from CSS custom properties (`--la-bg`, `--la-fg`, `--la-muted`,

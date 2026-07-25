@@ -51,8 +51,7 @@ class ProceduralClouds extends ThreeAsset {
     u.uDetail.value = Math.round(this.params.detail);
     u.uPointer.value.set(this.pointer.nx, 1 - this.pointer.ny);
     u.uPointerOn.value = this.pointer.active ? 1 : 0;
-    const r = this.container.getBoundingClientRect();
-    u.uRes.value.set(Math.max(r.width, 1), Math.max(r.height, 1));
+    u.uRes.value.set(Math.max(this.container.offsetWidth, 1), Math.max(this.container.offsetHeight, 1));
     this.renderer.render(this.scene, this.camera);
   }
 }

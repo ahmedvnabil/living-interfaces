@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Interactive Film — Living Assets</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../themes/tokens.css">
+<link rel="stylesheet" href="../themes/lab.css">
+<link rel="stylesheet" href="shared/showcase.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.min.js","gsap":"https://cdn.jsdelivr.net/npm/gsap@3.12.5/index.js"}}</script>
+</head><body class="la-body">
+<nav class="sc-nav"><div class="sc-nav__inner">
+  <a class="la-link" href="index.html"><span class="la-label">← Showcases</span></a>
+  <span class="la-label">Bonus · Interactive Film — scroll to play</span>
+</div></nav>
+
+<div class="sc-section" style="max-width:680px;text-align:center;padding-bottom:24px">
+  <span class="la-label">A LivingStory production</span>
+  <h1 style="letter-spacing:-0.02em">Emergence, in five scenes.</h1>
+  <p class="sc-prose" style="margin:0 auto">Scroll to advance. Every scene is a live
+  simulation — your scroll drives its parameters, your pointer disturbs it. No video
+  file exists; the film renders itself for you alone.</p>
+</div>
+
+<div id="film"></div>
+
+<div class="sc-section" style="max-width:680px;text-align:center">
+  <h2 class="sc-h2">Roll your own</h2>
+  <p class="sc-prose" style="margin:0 auto">This player is one component:
+  <code class="la-mono">new LivingStory().init(el, scenes)</code>. Scenes are plain JSON —
+  compose them in the <a class="la-link" href="../studio.html">Studio</a> and paste the
+  setup straight in.</p>
+</div>
+
+<footer class="sc-footer" style="text-align:center">Living Assets · LivingStory player.</footer>
+
+<script type="module">
+  import LivingStory from '../assets/player/living-story.js';
+  new LivingStory().init(document.getElementById('film'), [
+    {
+      module: 'simulations/noise-field.js',
+      headline: 'I. The field before form',
+      body: 'Everything begins as a scalar field — pure potential, sampled on a lattice. Scroll: the displacement amplitude grows.',
+      seed: 11, from: { amp: 2, flow: 0.05 }, to: { amp: 26, flow: 0.4 },
+    },
+    {
+      module: 'simulations/flow-field.js',
+      headline: 'II. Motion finds direction',
+      body: 'Take the curl and the field becomes velocity: particles stream along invisible highways. Scroll accelerates the wind.',
+      seed: 22, from: { count: 600, speed: 0.4 }, to: { count: 3000, speed: 2.2 },
+    },
+    {
+      module: 'simulations/boids.js',
+      headline: 'III. The crowd learns to think',
+      body: 'Three local rules — separate, align, cohere — and the stream becomes a society. Push into the flock with your pointer.',
+      seed: 33, from: { count: 80, cohesion: 0.3 }, to: { count: 420, cohesion: 1.6 },
+    },
+    {
+      module: 'simulations/physarum.js',
+      headline: 'IV. The society builds a body',
+      body: 'Millions of micro-decisions condense into vasculature. The organism is the memory of every path that worked.',
+      seed: 44, from: { agents: 1200, decay: 0.9 }, to: { agents: 6000, decay: 0.96 },
+    },
+    {
+      module: 'simulations/ai-thinking.js',
+      headline: 'V. The body learns to attend',
+      body: 'Focus contracts, associations orbit, resolution releases. Emergence, all the way up. — Fin.',
+      seed: 55, from: { tokens: 30, focus: 0.3 }, to: { tokens: 140, focus: 1 },
+    },
+  ]);
+</script>
+</body></html>

@@ -107,8 +107,7 @@ export abstract class AssetBase implements LivingAsset {
   resize(): void {
     if (!this.initialized) return;
     this.onResize();
-    const r = this.container.getBoundingClientRect();
-    this.metrics.setPixels(r.width, r.height, this.dpr());
+    this.metrics.setPixels(this.container.offsetWidth, this.container.offsetHeight, this.dpr());
   }
 
   setTheme(theme: ThemeName | ThemeTokens): void {
@@ -134,6 +133,14 @@ export abstract class AssetBase implements LivingAsset {
     this.time = 0;
     this.setup();
     if (this.pausedByUser) this.frame(0);
+  }
+
+  /** Advance exactly one frame with a fixed timestep while paused — the
+   *  offline-rendering entry point. Deterministic given seed + call sequence. */
+  renderFrame(dt: number): void {
+    if (!this.initialized) return;
+    this.time += dt;
+    this.frame(dt);
   }
 
   setParam(key: string, value: number): void {

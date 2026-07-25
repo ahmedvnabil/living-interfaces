@@ -24,8 +24,8 @@ class ThreeAsset extends AssetBase {
     this.renderer.domElement.remove();
   }
   onResize() {
-    const r = this.container.getBoundingClientRect();
-    const w = Math.max(1, r.width), h = Math.max(1, r.height);
+    const w = Math.max(1, this.container.offsetWidth);
+    const h = Math.max(1, this.container.offsetHeight);
     this.renderer.setSize(w, h, false);
     this.camera.aspect = w / h;
     this.camera.updateProjectionMatrix();

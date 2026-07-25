@@ -32,15 +32,18 @@ export class PointerField {
   private move(cx: number, cy: number): void {
     if (!this.el) return;
     const r = this.el.getBoundingClientRect();
-    const x = cx - r.left, y = cy - r.top;
+    // correct for CSS transforms: map screen px → layout px
+    const kx = r.width > 0 ? this.el.offsetWidth / r.width : 1;
+    const ky = r.height > 0 ? this.el.offsetHeight / r.height : 1;
+    const x = (cx - r.left) * kx, y = (cy - r.top) * ky;
     if (this.px >= 0) {
       this.vx = this.vx * 0.7 + (x - this.px) * 0.3;
       this.vy = this.vy * 0.7 + (y - this.py) * 0.3;
     }
     this.px = x; this.py = y;
     this.x = x; this.y = y;
-    this.nx = r.width > 0 ? x / r.width : 0.5;
-    this.ny = r.height > 0 ? y / r.height : 0.5;
+    this.nx = this.el.offsetWidth > 0 ? x / this.el.offsetWidth : 0.5;
+    this.ny = this.el.offsetHeight > 0 ? y / this.el.offsetHeight : 0.5;
   }
 
   /** Per-frame decay so velocity settles when the pointer stops. */

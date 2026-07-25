@@ -17,10 +17,9 @@ class Canvas2DAsset extends AssetBase {
     this.canvas.remove();
   }
   onResize() {
-    const r = this.container.getBoundingClientRect();
     const dpr = this.dpr();
-    this.w = Math.max(1, r.width);
-    this.h = Math.max(1, r.height);
+    this.w = Math.max(1, this.container.offsetWidth);
+    this.h = Math.max(1, this.container.offsetHeight);
     this.canvas.width = Math.round(this.w * dpr);
     this.canvas.height = Math.round(this.h * dpr);
     this.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);

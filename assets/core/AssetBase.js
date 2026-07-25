@@ -88,8 +88,7 @@ class AssetBase {
   resize() {
     if (!this.initialized) return;
     this.onResize();
-    const r = this.container.getBoundingClientRect();
-    this.metrics.setPixels(r.width, r.height, this.dpr());
+    this.metrics.setPixels(this.container.offsetWidth, this.container.offsetHeight, this.dpr());
   }
   setTheme(theme) {
     this.theme = toTokens(theme);
@@ -112,6 +111,13 @@ class AssetBase {
     this.time = 0;
     this.setup();
     if (this.pausedByUser) this.frame(0);
+  }
+  /** Advance exactly one frame with a fixed timestep while paused — the
+   *  offline-rendering entry point. Deterministic given seed + call sequence. */
+  renderFrame(dt) {
+    if (!this.initialized) return;
+    this.time += dt;
+    this.frame(dt);
   }
   setParam(key, value) {
     this.params[key] = value;
