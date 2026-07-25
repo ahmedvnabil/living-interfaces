@@ -7,6 +7,7 @@ import { badge, setBadge, formatSeed } from '../components/panels.js';
 import { randomSeed } from '../utils/prng.js';
 import { Timeline } from './timeline.js';
 import { recordRealtime, renderOffline } from './recorder.js';
+import { renderMp4, supportsWebCodecs } from './webcodecs-export.js';
 
 const $ = <T extends HTMLElement>(id: string): T => document.getElementById(id) as T;
 
@@ -247,12 +248,21 @@ class Studio {
       this.asset.pause();
       this.asset.reset();
       this.setStatus('RENDER 0%', 'error');
-      await renderOffline(
-        this.asset, canvas, this.timeline.duration, this.fps,
-        `${this.meta.id}-${this.seed}-offline.webm`,
-        (t) => this.applyAutomation(t),
-        (f) => this.setStatus(`RENDER ${Math.round(f * 100)}%`, 'error'),
-      );
+      const progress = (f: number) => this.setStatus(`RENDER ${Math.round(f * 100)}%`, 'error');
+      if (supportsWebCodecs()) {
+        // WebCodecs path: exact per-frame timestamps, MP4 out, no retiming needed
+        await renderMp4(
+          this.asset, canvas, this.timeline.duration, this.fps,
+          `${this.meta.id}-${this.seed}.mp4`,
+          (t) => this.applyAutomation(t), progress,
+        );
+      } else {
+        await renderOffline(
+          this.asset, canvas, this.timeline.duration, this.fps,
+          `${this.meta.id}-${this.seed}-offline.webm`,
+          (t) => this.applyAutomation(t), progress,
+        );
+      }
       this.setStatus('DONE — SAVED', 'live');
     } catch (err) {
       console.error('[studio] offline render failed', err);

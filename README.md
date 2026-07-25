@@ -75,10 +75,12 @@ Open `studio.html`: pick any module, choose a resolution (HD / Full HD / QHD / s
 9:16 reels), keyframe parameters on the timeline (⏺ at the playhead, smoothstep
 interpolation), then export:
 
-- **Render WebM · frame-accurate** — steps the simulation offline at a fixed timestep
-  and captures every frame via `captureStream(0)` + `requestFrame()`. Never drops
-  frames, regardless of resolution or machine speed. (Worker-rendered modules use
-  realtime mode instead.)
+- **Render MP4 · frame-accurate** — steps the simulation offline and encodes each
+  frame with an exact timestamp through WebCodecs (`VideoEncoder`, H.264) muxed by
+  the vendored `mp4-muxer`. The file plays at precisely the requested duration on
+  any machine — no ffmpeg, no retiming, never a dropped frame. Browsers without
+  WebCodecs fall back to the `captureStream(0)` WebM path. (Worker-rendered modules
+  use realtime mode instead.)
 - **Record realtime** — live capture of the running canvas, pointer interaction included.
 - **PNG frame** and **Copy setup JSON** (module + seed + params + timeline) for reuse.
 

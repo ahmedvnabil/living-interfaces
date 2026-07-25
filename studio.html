@@ -4,7 +4,7 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="themes/tokens.css">
 <link rel="stylesheet" href="themes/lab.css">
-<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.min.js","gsap":"https://cdn.jsdelivr.net/npm/gsap@3.12.5/index.js"}}</script>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.min.js","gsap":"https://cdn.jsdelivr.net/npm/gsap@3.12.5/index.js","mp4-muxer":"./vendor/mp4-muxer.min.mjs"}}</script>
 <style>
   .st-app { display: grid; grid-template-columns: 300px 1fr; grid-template-rows: auto 1fr auto; height: 100vh; }
   .st-top { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; padding: 10px 16px; border-bottom: var(--la-border); gap: 12px; }
@@ -70,7 +70,7 @@
     <div class="st-field">
       <span class="la-label">Export</span>
       <div style="display:grid;gap:6px">
-        <button class="la-btn la-btn--primary" id="renderBtn" title="Frame-accurate offline render — never drops frames">Render WebM · frame-accurate</button>
+        <button class="la-btn la-btn--primary" id="renderBtn" title="Frame-accurate offline render via WebCodecs — exact timestamps, never drops frames">Render MP4 · frame-accurate</button>
         <button class="la-btn" id="recBtn">Record realtime</button>
         <button class="la-btn" id="pngBtn">PNG frame</button>
         <button class="la-btn" id="jsonBtn" title="Copy module + params + timeline as JSON for the interactive player">Copy setup JSON</button>
