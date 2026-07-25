@@ -1,12 +1,11 @@
 # Living Interfaces
 
-[![CI](https://github.com/ahmedvnabil/living-interfaces/actions/workflows/ci.yml/badge.svg)](https://github.com/ahmedvnabil/living-interfaces/actions/workflows/ci.yml)
+[![Tests](https://img.shields.io/badge/tests-12%20passing-c6ff4d.svg)](tests)
 [![MIT License](https://img.shields.io/badge/license-MIT-white.svg)](LICENSE)
 [![Release](https://img.shields.io/github/v/release/ahmedvnabil/living-interfaces?color=c6ff4d&label=release)](https://github.com/ahmedvnabil/living-interfaces/releases/latest)
-[![Live site](https://img.shields.io/badge/live-site-c6ff4d?logo=githubpages&logoColor=111)](https://ahmedvnabil.github.io/living-interfaces/)
 
 <p align="center">
-  <a href="https://ahmedvnabil.github.io/living-interfaces/">
+  <a href="docs/media/living-interfaces-demo.gif">
     <img src="docs/media/living-interfaces-demo.gif" alt="Living Interfaces product site with a live generative flow field" width="960">
   </a>
 </p>
@@ -16,9 +15,10 @@ Framework-free generative visuals for websites, interactive stories, and video:
 a browser **Studio**, and **25 showcase pages** — pure TypeScript compiled to
 plain ES modules.
 
-**[Explore the live library](https://ahmedvnabil.github.io/living-interfaces/)** ·
-**[Open Studio](https://ahmedvnabil.github.io/living-interfaces/studio.html)** ·
-**[Browse all 40 systems](https://ahmedvnabil.github.io/living-interfaces/catalog.html)**
+**[Product source](index.html)** ·
+**[Studio source](studio.html)** ·
+**[Browse all 40 systems](catalog.html)** ·
+**[Download v0.2.0](https://github.com/ahmedvnabil/living-interfaces/releases/latest)**
 
 ## The system catalog
 
