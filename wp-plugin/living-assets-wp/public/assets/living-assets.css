@@ -2,7 +2,9 @@
    The design tokens double as the theming API: override any --la-* variable in
    your theme (Appearance → Additional CSS) and every module recolors live. */
 
-:root {
+/* :where() keeps these defaults at zero specificity, so any theme's own
+   --la-* declarations win regardless of stylesheet load order. */
+:where(:root) {
   --la-bg: #0a0b0c;
   --la-fg: #f4f5f4;
   --la-muted: #8a9088;
@@ -11,7 +13,7 @@
   --la-accent2: #5f7a52;
 }
 
-[data-theme="light"], .is-light-theme {
+:where([data-theme="light"], .is-light-theme) {
   --la-bg: #f6f7f5;
   --la-fg: #111412;
   --la-muted: #5c635c;

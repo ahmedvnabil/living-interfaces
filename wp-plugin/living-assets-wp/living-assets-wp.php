@@ -3,7 +3,7 @@
  * Plugin Name:       Living Assets
  * Plugin URI:        https://zad.tools/living-assets
  * Description:       40 generative visualization modules as Gutenberg blocks and shortcodes — flow fields, physarum, terrain, knowledge graphs and more, rendered live on canvas with your theme's colors.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Requires at least: 6.5
  * Requires PHP:      8.0
  * Author:            Ahmed Nabil
@@ -13,7 +13,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-define( 'LAWP_VERSION', '1.0.0' );
+define( 'LAWP_VERSION', '1.0.1' );
 define( 'LAWP_PATH', plugin_dir_path( __FILE__ ) );
 define( 'LAWP_URL', plugin_dir_url( __FILE__ ) );
 define( 'LAWP_SLUG', 'living-assets-wp' );
