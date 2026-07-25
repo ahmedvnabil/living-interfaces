@@ -1,0 +1,388 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Living Assets — Documentation</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../themes/tokens.css">
+<link rel="stylesheet" href="../themes/lab.css">
+<style>
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 48px 24px 96px; }
+  table { border-collapse: collapse; width: 100%; margin-top: 28px; }
+  td, th { border-top: var(--la-border); padding: 12px 14px 12px 0; text-align: left; vertical-align: top; }
+  th { font-family: var(--la-font-mono); font-size: var(--la-text-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--la-muted); }
+  .sub { color: var(--la-muted); font-size: var(--la-text-sm); font-style: italic; }
+  .small { font-size: var(--la-text-sm); color: var(--la-muted); }
+  .idx { color: var(--la-muted); }
+  code { font-family: var(--la-font-mono); background: var(--la-bg-raised); border: var(--la-border); padding: 1px 6px; }
+</style></head><body class="la-body"><div class="wrap">
+<a class="la-link" href="../index.html"><span class="la-label">← Specimen Catalog</span></a>
+<h1 style="letter-spacing:-0.02em;margin:16px 0 8px">Documentation</h1>
+<p style="color:var(--la-muted);max-width:640px">Every module ships as a plain ES module in
+<code>/assets</code> and mounts with <code>new Asset().init(element)</code>. The lifecycle
+contract is identical across all 40 instruments:
+<code>init · destroy · pause · resume · resize · setTheme · setData</code>.
+Per-module sheets below are generated from the catalog.</p>
+<table>
+<tr><th>#</th><th>Module</th><th>Renderer</th><th>Export</th><th>Tags</th><th></th></tr>
+
+  <tr>
+    <td class="la-mono idx">01</td>
+    <td><a class="la-link" href="flow-field.md"><strong>Flow Field</strong></a><br>
+        <span class="sub">Advectio particularum · curl noise</span></td>
+    <td class="la-mono small">canvas2d</td>
+    <td class="la-mono small">PNG</td>
+    <td class="small">field · particles</td>
+    <td><a class="la-link small" href="../index.html#flow-field">specimen ↗</a></td>
+  </tr>
+  <tr>
+    <td class="la-mono idx">02</td>
+    <td><a class="la-link" href="particle-system.md"><strong>Particle System</strong></a><br>
+        <span class="sub">Systema corpusculorum · forces</span></td>
+    <td class="la-mono small">canvas2d</td>
+    <td class="la-mono small">PNG</td>
+    <td class="small">particles · physics</td>
+    <td><a class="la-link small" href="../index.html#particle-system">specimen ↗</a></td>
+  </tr>
+  <tr>
+    <td class="la-mono idx">03</td>
+    <td><a class="la-link" href="slime-mold.md"><strong>Slime Mold</strong></a><br>
+        <span class="sub">Physarum polycephalum · network formation</span></td>
+    <td class="la-mono small">canvas2d</td>
+    <td class="la-mono small">PNG</td>
+    <td class="small">biology · agents</td>
+    <td><a class="la-link small" href="../index.html#slime-mold">specimen ↗</a></td>
+  </tr>
+  <tr>
+    <td class="la-mono idx">04</td>
+    <td><a class="la-link" href="physarum.md"><strong>Physarum</strong></a><br>
+        <span class="sub">Chemotaxis simulata · trail following</span></td>
+    <td class="la-mono small">canvas2d</td>
+    <td class="la-mono small">PNG</td>
+    <td class="small">biology · agents</td>
+    <td><a class="la-link small" href="../index.html#physarum">specimen ↗</a></td>
+  </tr>
+  <tr>
+    <td class="la-mono idx">05</td>
+    <td><a class="la-link" href="voronoi.md"><strong>Voronoi Tessellation</strong></a><br>
+        <span class="sub">Tessellatio Voronoi · proximity partition</span></td>
+    <td class="la-mono small">canvas2d</td>
+    <td class="la-mono small">PNG+SVG</td>
+    <td class="small">geometry</td>
+    <td><a class="la-link small" href="../index.html#voronoi">specimen ↗</a></td>
+  </tr>
+  <tr>
+    <td class="la-mono idx">06</td>
+    <td><a class="la-link" href="reaction-diffusion.md"><strong>Reaction–Diffusion</strong></a><br>
+        <span class="sub">Gray–Scott · morphogenesis</span></td>
+    <td class="la-mono small">worker</td>
+    <td class="la-mono small">PNG</td>
+    <td class="small">chemistry · pde</td>
+    <td><a class="la-link small" href="../index.html#reaction-diffusion">specimen ↗</a></td>
+  </tr>
+  <tr>
+    <td class="la-mono idx">07</td>
+    <td><a class="la-link" href="cellular-automata.md"><strong>Cellular Automata</strong></a><br>
+        <span class="sub">Automata cellularia · discrete dynamics</span></td>
+    <td class="la-mono small">canvas2d</td>
+    <td class="la-mono small">PNG</td>
+    <td class="small">discrete · emergence</td>
+    <td><a class="la-link small" href="../index.html#cellular-automata">specimen ↗</a></td>
+  </tr>
+  <tr>
+    <td class="la-mono idx">08</td>
+    <td><a class="la-link" href="boids.md"><strong>Boids</strong></a><br>
+        <span class="sub">Grex simulatus · Reynolds flocking</span></td>
+    <td class="la-mono small">canvas2d</td>
+    <td class="la-mono small">PNG</td>
+    <td class="small">agents · emergence</td>
+    <td><a class="la-link small" href="../index.html#boids">specimen ↗</a></td>
+  </tr>
+  <tr>
+    <td class="la-mono idx">09</td>
+    <td><a class="la-link" href="wind-map.md"><strong>Wind Map</strong></a><br>
+        <span class="sub">Charta ventorum · streamline advection</span></td>
+    <td class="la-mono small">canvas2d</td>
+    <td class="la-mono small">PNG</td>
+    <td class="small">field · geo</td>
+    <td><a class="la-link small" href="../index.html#wind-map">specimen ↗</a></td>
+  </tr>
+  <tr>
+    <td class="la-mono idx">10</td>
+    <td><a class="la-link" href="noise-field.md"><strong>Noise Field</strong></a><br>
+        <span class="sub">Campus perturbationis · fBm scalar field</span></td>
+    <td class="la-mono small">canvas2d</td>
+    <td class="la-mono small">PNG</td>
+    <td class="small">field · noise</td>
+    <td><a class="la-link small" href="../index.html#noise-field">specimen ↗</a></td>
+  </tr>
+  <tr>
+    <td class="la-mono idx">11</td>
+    <td><a class="la-link" href="magnetic-field.md"><strong>Magnetic Field</strong></a><br>
+        <span class="sub">Campus magneticus · dipole lines</span></td>
+    <td class="la-mono small">canvas2d</td>
+    <td class="la-mono small">PNG+SVG</td>
+    <td class="small">physics · field</td>
+    <td><a class="la-link small" href="../index.html#magnetic-field">specimen ↗</a></td>
+  </tr>
+  <tr>
+    <td class="la-mono idx">12</td>
+    <td><a class="la-link" href="fluid-simulation.md"><strong>Fluid Simulation</strong></a><br>
+        <span class="sub">Navier–Stokes · stable fluids</span></td>
+    <td class="la-mono small">canvas2d</td>
+    <td class="la-mono small">PNG</td>
+    <td class="small">physics · pde</td>
+    <td><a class="la-link small" href="../index.html#fluid-simulation">specimen ↗</a></td>
+  </tr>
+  <tr>
+    <td class="la-mono idx">13</td>
+    <td><a class="la-link" href="wave-simulation.md"><strong>Wave Simulation</strong></a><br>
+        <span class="sub">Aequatio undarum · 2-D wave equation</span></td>
+    <td class="la-mono small">canvas2d</td>
+    <td class="la-mono small">PNG</td>
+    <td class="small">physics · pde</td>
+    <td><a class="la-link small" href="../index.html#wave-simulation">specimen ↗</a></td>
+  </tr>
+  <tr>
+    <td class="la-mono idx">14</td>
+    <td><a class="la-link" href="contour-map.md"><strong>Contour Map</strong></a><br>
+        <span class="sub">Isohypsae · marching squares</span></td>
+    <td class="la-mono small">canvas2d</td>
+    <td class="la-mono small">PNG+SVG</td>
+    <td class="small">geo · field</td>
+    <td><a class="la-link small" href="../index.html#contour-map">specimen ↗</a></td>
+  </tr>
+  <tr>
+    <td class="la-mono idx">15</td>
+    <td><a class="la-link" href="heat-map.md"><strong>Heat Map</strong></a><br>
+        <span class="sub">Diffusio caloris · Fourier lattice</span></td>
+    <td class="la-mono small">canvas2d</td>
+    <td class="la-mono small">PNG</td>
+    <td class="small">physics · field</td>
+    <td><a class="la-link small" href="../index.html#heat-map">specimen ↗</a></td>
+  </tr>
+  <tr>
+    <td class="la-mono idx">16</td>
+    <td><a class="la-link" href="terrain-generator.md"><strong>Terrain Generator</strong></a><br>
+        <span class="sub">Orogenesis proceduralis · fBm displacement</span></td>
+    <td class="la-mono small">webgl</td>
+    <td class="la-mono small">PNG</td>
+    <td class="small">3d · geo</td>
+    <td><a class="la-link small" href="../index.html#terrain-generator">specimen ↗</a></td>
+  </tr>
+  <tr>
+    <td class="la-mono idx">17</td>
+    <td><a class="la-link" href="hex-grid.md"><strong>Hex Grid</strong></a><br>
+        <span class="sub">Reticulum hexagonale · axial lattice</span></td>
+    <td class="la-mono small">canvas2d</td>
+    <td class="la-mono small">PNG+SVG</td>
+    <td class="small">geometry · grid</td>
+    <td><a class="la-link small" href="../index.html#hex-grid">specimen ↗</a></td>
+  </tr>
+  <tr>
+    <td class="la-mono idx">18</td>
+    <td><a class="la-link" href="neural-network-graph.md"><strong>Neural Network Graph</strong></a><br>
+        <span class="sub">Rete neurale · feed-forward activations</span></td>
+    <td class="la-mono small">canvas2d</td>
+    <td class="la-mono small">PNG+SVG</td>
+    <td class="small">network · ml</td>
+    <td><a class="la-link small" href="../index.html#neural-network-graph">specimen ↗</a></td>
+  </tr>
+  <tr>
+    <td class="la-mono idx">19</td>
+    <td><a class="la-link" href="knowledge-graph.md"><strong>Knowledge Graph</strong></a><br>
+        <span class="sub">Graphus notionum · force-directed embedding</span></td>
+    <td class="la-mono small">canvas2d</td>
+    <td class="la-mono small">PNG+SVG</td>
+    <td class="small">network · data</td>
+    <td><a class="la-link small" href="../index.html#knowledge-graph">specimen ↗</a></td>
+  </tr>
+  <tr>
+    <td class="la-mono idx">20</td>
+    <td><a class="la-link" href="animated-nodes.md"><strong>Animated Nodes</strong></a><br>
+        <span class="sub">Constellatio nodorum · proximity linking</span></td>
+    <td class="la-mono small">canvas2d</td>
+    <td class="la-mono small">PNG</td>
+    <td class="small">network · ambient</td>
+    <td><a class="la-link small" href="../index.html#animated-nodes">specimen ↗</a></td>
+  </tr>
+  <tr>
+    <td class="la-mono idx">21</td>
+    <td><a class="la-link" href="signal-propagation.md"><strong>Signal Propagation</strong></a><br>
+        <span class="sub">Propagatio signalis · graph traversal</span></td>
+    <td class="la-mono small">canvas2d</td>
+    <td class="la-mono small">PNG</td>
+    <td class="small">network · dynamics</td>
+    <td><a class="la-link small" href="../index.html#signal-propagation">specimen ↗</a></td>
+  </tr>
+  <tr>
+    <td class="la-mono idx">22</td>
+    <td><a class="la-link" href="path-finding.md"><strong>Path Finding</strong></a><br>
+        <span class="sub">Inventio itineris · A* search</span></td>
+    <td class="la-mono small">canvas2d</td>
+    <td class="la-mono small">PNG</td>
+    <td class="small">algorithm · grid</td>
+    <td><a class="la-link small" href="../index.html#path-finding">specimen ↗</a></td>
+  </tr>
+  <tr>
+    <td class="la-mono idx">23</td>
+    <td><a class="la-link" href="swarm-intelligence.md"><strong>Swarm Intelligence</strong></a><br>
+        <span class="sub">Intelligentia gregis · particle swarm optimization</span></td>
+    <td class="la-mono small">canvas2d</td>
+    <td class="la-mono small">PNG</td>
+    <td class="small">agents · optimization</td>
+    <td><a class="la-link small" href="../index.html#swarm-intelligence">specimen ↗</a></td>
+  </tr>
+  <tr>
+    <td class="la-mono idx">24</td>
+    <td><a class="la-link" href="organic-growth.md"><strong>Organic Growth</strong></a><br>
+        <span class="sub">Crescentia differentialis · curve buckling</span></td>
+    <td class="la-mono small">canvas2d</td>
+    <td class="la-mono small">PNG+SVG</td>
+    <td class="small">biology · geometry</td>
+    <td><a class="la-link small" href="../index.html#organic-growth">specimen ↗</a></td>
+  </tr>
+  <tr>
+    <td class="la-mono idx">25</td>
+    <td><a class="la-link" href="root-growth.md"><strong>Root Growth</strong></a><br>
+        <span class="sub">Rhizogenesis · gravitropic branching</span></td>
+    <td class="la-mono small">canvas2d</td>
+    <td class="la-mono small">PNG+SVG</td>
+    <td class="small">biology · branching</td>
+    <td><a class="la-link small" href="../index.html#root-growth">specimen ↗</a></td>
+  </tr>
+  <tr>
+    <td class="la-mono idx">26</td>
+    <td><a class="la-link" href="crystal-growth.md"><strong>Crystal Growth</strong></a><br>
+        <span class="sub">Crystallisatio · diffusion-limited aggregation</span></td>
+    <td class="la-mono small">canvas2d</td>
+    <td class="la-mono small">PNG</td>
+    <td class="small">physics · fractal</td>
+    <td><a class="la-link small" href="../index.html#crystal-growth">specimen ↗</a></td>
+  </tr>
+  <tr>
+    <td class="la-mono idx">27</td>
+    <td><a class="la-link" href="l-system-trees.md"><strong>L-System Trees</strong></a><br>
+        <span class="sub">Systema Lindenmayer · grammar rewriting</span></td>
+    <td class="la-mono small">canvas2d</td>
+    <td class="la-mono small">PNG+SVG</td>
+    <td class="small">biology · grammar</td>
+    <td><a class="la-link small" href="../index.html#l-system-trees">specimen ↗</a></td>
+  </tr>
+  <tr>
+    <td class="la-mono idx">28</td>
+    <td><a class="la-link" href="data-rivers.md"><strong>Data Rivers</strong></a><br>
+        <span class="sub">Flumina datorum · stacked stream series</span></td>
+    <td class="la-mono small">canvas2d</td>
+    <td class="la-mono small">PNG+SVG</td>
+    <td class="small">data · flow</td>
+    <td><a class="la-link small" href="../index.html#data-rivers">specimen ↗</a></td>
+  </tr>
+  <tr>
+    <td class="la-mono idx">29</td>
+    <td><a class="la-link" href="ribbon-trails.md"><strong>Ribbon Trails</strong></a><br>
+        <span class="sub">Taeniae sequentes · spring-chain kinematics</span></td>
+    <td class="la-mono small">canvas2d</td>
+    <td class="la-mono small">PNG</td>
+    <td class="small">motion · interaction</td>
+    <td><a class="la-link small" href="../index.html#ribbon-trails">specimen ↗</a></td>
+  </tr>
+  <tr>
+    <td class="la-mono idx">30</td>
+    <td><a class="la-link" href="energy-streams.md"><strong>Energy Streams</strong></a><br>
+        <span class="sub">Flumina energiae · Bézier transport</span></td>
+    <td class="la-mono small">canvas2d</td>
+    <td class="la-mono small">PNG</td>
+    <td class="small">flow · network</td>
+    <td><a class="la-link small" href="../index.html#energy-streams">specimen ↗</a></td>
+  </tr>
+  <tr>
+    <td class="la-mono idx">31</td>
+    <td><a class="la-link" href="procedural-clouds.md"><strong>Procedural Clouds</strong></a><br>
+        <span class="sub">Nubes procedurales · volumetric fBm</span></td>
+    <td class="la-mono small">webgl</td>
+    <td class="la-mono small">PNG</td>
+    <td class="small">3d · atmosphere</td>
+    <td><a class="la-link small" href="../index.html#procedural-clouds">specimen ↗</a></td>
+  </tr>
+  <tr>
+    <td class="la-mono idx">32</td>
+    <td><a class="la-link" href="distance-fields.md"><strong>Distance Fields</strong></a><br>
+        <span class="sub">Campi distantiae · signed distance functions</span></td>
+    <td class="la-mono small">canvas2d</td>
+    <td class="la-mono small">PNG</td>
+    <td class="small">geometry · sdf</td>
+    <td><a class="la-link small" href="../index.html#distance-fields">specimen ↗</a></td>
+  </tr>
+  <tr>
+    <td class="la-mono idx">33</td>
+    <td><a class="la-link" href="vector-fields.md"><strong>Vector Fields</strong></a><br>
+        <span class="sub">Campus vectorius · quiver plot</span></td>
+    <td class="la-mono small">canvas2d</td>
+    <td class="la-mono small">PNG+SVG</td>
+    <td class="small">field · math</td>
+    <td><a class="la-link small" href="../index.html#vector-fields">specimen ↗</a></td>
+  </tr>
+  <tr>
+    <td class="la-mono idx">34</td>
+    <td><a class="la-link" href="network-topology.md"><strong>Network Topology</strong></a><br>
+        <span class="sub">Topologia retis · hierarchical infrastructure</span></td>
+    <td class="la-mono small">canvas2d</td>
+    <td class="la-mono small">PNG+SVG</td>
+    <td class="small">network · infra</td>
+    <td><a class="la-link small" href="../index.html#network-topology">specimen ↗</a></td>
+  </tr>
+  <tr>
+    <td class="la-mono idx">35</td>
+    <td><a class="la-link" href="mesh-morphing.md"><strong>Mesh Morphing</strong></a><br>
+        <span class="sub">Metamorphosis polygonalis · vertex displacement</span></td>
+    <td class="la-mono small">webgl</td>
+    <td class="la-mono small">PNG</td>
+    <td class="small">3d · geometry</td>
+    <td><a class="la-link small" href="../index.html#mesh-morphing">specimen ↗</a></td>
+  </tr>
+  <tr>
+    <td class="la-mono idx">36</td>
+    <td><a class="la-link" href="generative-typography.md"><strong>Generative Typography</strong></a><br>
+        <span class="sub">Typographia generativa · glyph particle sampling</span></td>
+    <td class="la-mono small">canvas2d</td>
+    <td class="la-mono small">PNG</td>
+    <td class="small">typography · particles</td>
+    <td><a class="la-link small" href="../index.html#generative-typography">specimen ↗</a></td>
+  </tr>
+  <tr>
+    <td class="la-mono idx">37</td>
+    <td><a class="la-link" href="dynamic-grid.md"><strong>Dynamic Grid</strong></a><br>
+        <span class="sub">Reticulum reactivum · cursor field response</span></td>
+    <td class="la-mono small">canvas2d</td>
+    <td class="la-mono small">PNG</td>
+    <td class="small">grid · interaction</td>
+    <td><a class="la-link small" href="../index.html#dynamic-grid">specimen ↗</a></td>
+  </tr>
+  <tr>
+    <td class="la-mono idx">38</td>
+    <td><a class="la-link" href="living-background.md"><strong>Living Background</strong></a><br>
+        <span class="sub">Fundus vivens · ambient field layer</span></td>
+    <td class="la-mono small">canvas2d</td>
+    <td class="la-mono small">PNG</td>
+    <td class="small">ambient · background</td>
+    <td><a class="la-link small" href="../index.html#living-background">specimen ↗</a></td>
+  </tr>
+  <tr>
+    <td class="la-mono idx">39</td>
+    <td><a class="la-link" href="ai-thinking.md"><strong>AI Thinking</strong></a><br>
+        <span class="sub">Cogitatio machinae · attention dynamics</span></td>
+    <td class="la-mono small">canvas2d</td>
+    <td class="la-mono small">PNG</td>
+    <td class="small">ambient · ml</td>
+    <td><a class="la-link small" href="../index.html#ai-thinking">specimen ↗</a></td>
+  </tr>
+  <tr>
+    <td class="la-mono idx">40</td>
+    <td><a class="la-link" href="cursor-physics.md"><strong>Cursor Physics</strong></a><br>
+        <span class="sub">Physica cursoris · spring-mass follower</span></td>
+    <td class="la-mono small">canvas2d</td>
+    <td class="la-mono small">PNG</td>
+    <td class="small">interaction · physics</td>
+    <td><a class="la-link small" href="../index.html#cursor-physics">specimen ↗</a></td>
+  </tr>
+</table>
+</div></body></html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio — Living Assets</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../themes/tokens.css">
+<link rel="stylesheet" href="../themes/lab.css">
+<link rel="stylesheet" href="shared/showcase.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.min.js"}}</script>
+</head><body class="la-body">
+<nav class="sc-nav"><div class="sc-nav__inner">
+  <a class="la-link" href="index.html"><span class="la-label">← Showcases</span></a>
+  <span class="la-label">Study 03 · Portfolio</span>
+</div></nav>
+
+<header class="sc-hero">
+  <div class="sc-hero__bg" id="bg"></div>
+  <div class="sc-hero__inner">
+    <span class="la-label">N. Aldrin — computational designer</span>
+    <h1>Work that moves because it must.</h1>
+    <p class="lede">The hero runs <code class="la-mono">CursorPhysics</code>; a small
+    entourage of bodies obeys F = ma around your pointer.</p>
+  </div>
+</header>
+
+<section class="sc-section">
+  <span class="la-label">Selected work</span>
+  <div class="sc-cols sc-cols--2" style="margin-top:16px">
+    <a href="#" class="sc-kpi" style="text-decoration:none"><span class="la-label">2026</span><b style="font-size:1.1rem">Telemetry atlas for a wind fleet</b><span>Field instruments · WebGL</span></a>
+    <a href="#" class="sc-kpi" style="text-decoration:none"><span class="la-label">2025</span><b style="font-size:1.1rem">Morphogenesis identity system</b><span>Reaction–diffusion · print + web</span></a>
+    <a href="#" class="sc-kpi" style="text-decoration:none"><span class="la-label">2025</span><b style="font-size:1.1rem">Exchange market microscope</b><span>Data rivers · realtime</span></a>
+    <a href="#" class="sc-kpi" style="text-decoration:none"><span class="la-label">2024</span><b style="font-size:1.1rem">Museum wayfinding organism</b><span>Physarum · installation</span></a>
+  </div>
+</section>
+
+<section class="sc-section sc-section--hairline sc-cols sc-cols--2">
+  <div class="sc-stage sc-stage--tall" id="grid"></div>
+  <div>
+    <h2 class="sc-h2">Process</h2>
+    <p class="sc-prose">Every project starts as a field study. The lattice on the left is
+    <strong>Dynamic Grid</strong> — the same instrument clients see in my proposals.</p>
+  </div>
+</section>
+
+<footer class="sc-footer">Living Assets · study 03.</footer>
+
+<script type="module">
+  import CursorPhysics from '../assets/simulations/cursor-physics.js';
+  import DynamicGrid from '../assets/simulations/dynamic-grid.js';
+  new CursorPhysics().init(document.getElementById('bg'), { params: { bodies: 16 } });
+  new DynamicGrid().init(document.getElementById('grid'), { params: { pitch: 26, gain: 1.6 } });
+</script>
+</body></html>

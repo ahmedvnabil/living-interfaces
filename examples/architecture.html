@@ -1,0 +1,40 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Architecture — Living Assets</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../themes/tokens.css">
+<link rel="stylesheet" href="../themes/lab.css">
+<link rel="stylesheet" href="shared/showcase.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.min.js"}}</script>
+</head><body class="la-body">
+<nav class="sc-nav"><div class="sc-nav__inner">
+  <a class="la-link" href="index.html"><span class="la-label">← Showcases</span></a>
+  <span class="la-label">Study 20 · Architecture</span>
+</div></nav>
+
+<div class="sc-section sc-cols sc-cols--2" style="align-items:center">
+  <div>
+    <span class="la-label">Bureau Halide · competition entry</span>
+    <h1 style="letter-spacing:-0.02em">Massing as an implicit surface.</h1>
+    <p class="sc-prose">The study model is a signed-distance scene: primitives blended by
+    smooth minimum, sections read as banded isolines. Push volumes with the pointer.</p>
+  </div>
+  <div class="sc-stage sc-stage--square" id="sdf"></div>
+</div>
+
+<div class="sc-section sc-section--hairline sc-cols sc-cols--2">
+  <div class="sc-stage sc-stage--tall" id="lattice"><span class="la-label sc-stage__label">Structural lattice study</span></div>
+  <div class="sc-stage sc-stage--tall" id="site"><span class="la-label sc-stage__label">Site topography</span></div>
+</div>
+
+<footer class="sc-footer">Living Assets · study 20.</footer>
+
+<script type="module">
+  import DistanceFields from '../assets/simulations/distance-fields.js';
+  import HexGrid from '../assets/simulations/hex-grid.js';
+  import TerrainGenerator from '../assets/simulations/terrain-generator.js';
+  new DistanceFields().init(document.getElementById('sdf'));
+  new HexGrid().init(document.getElementById('lattice'), { params: { size: 22 } });
+  new TerrainGenerator().init(document.getElementById('site'), { params: { relief: 0.8 } });
+</script>
+</body></html>

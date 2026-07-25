@@ -1,0 +1,34 @@
+/* Shared showcase-page layout. Requires tokens.css + lab.css. */
+.sc-nav { position: sticky; top: 0; z-index: 30; background: var(--la-bg); border-bottom: var(--la-border); }
+.sc-nav__inner { display: flex; justify-content: space-between; align-items: center; padding: 10px 24px; max-width: 1360px; margin: 0 auto; }
+.sc-nav a { text-decoration: none; }
+
+.sc-hero { position: relative; min-height: 72vh; display: grid; align-items: center; border-bottom: var(--la-border); overflow: hidden; }
+.sc-hero__bg { position: absolute; inset: 0; z-index: 0; }
+.sc-hero__inner { position: relative; z-index: 1; padding: 64px 24px; max-width: 1360px; margin: 0 auto; width: 100%; box-sizing: border-box; }
+.sc-hero h1 { font-size: clamp(2rem, 5.5vw, 3.4rem); font-weight: 700; letter-spacing: -0.03em; margin: 12px 0 16px; max-width: 640px; }
+.sc-hero .lede { color: var(--la-muted); max-width: 520px; line-height: 1.7; }
+
+.sc-section { padding: 64px 24px; max-width: 1360px; margin: 0 auto; }
+.sc-section--hairline { border-top: var(--la-border); }
+.sc-cols { display: grid; gap: 24px; }
+@media (min-width: 800px) {
+  .sc-cols--2 { grid-template-columns: 1fr 1fr; }
+  .sc-cols--3 { grid-template-columns: repeat(3, 1fr); }
+  .sc-cols--sidebar { grid-template-columns: 2fr 1fr; }
+}
+
+.sc-stage { position: relative; background: var(--la-bg-raised); border: var(--la-border); overflow: hidden; }
+.sc-stage--tall { aspect-ratio: 16 / 10; }
+.sc-stage--wide { aspect-ratio: 21 / 9; }
+.sc-stage--square { aspect-ratio: 1; }
+.sc-stage__label { position: absolute; top: 8px; left: 10px; z-index: 3; }
+
+.sc-kpi { border: var(--la-border); background: var(--la-bg-raised); padding: 14px 16px; }
+.sc-kpi b { display: block; font-family: var(--la-font-mono); font-size: 1.5rem; font-weight: 500; margin-top: 4px; }
+.sc-kpi span { color: var(--la-muted); }
+
+.sc-footer { border-top: var(--la-border); padding: 28px 24px 56px; color: var(--la-muted); font-size: var(--la-text-sm); max-width: 1360px; margin: 0 auto; }
+.sc-prose { color: var(--la-muted); line-height: 1.75; max-width: 620px; }
+.sc-prose strong { color: var(--la-fg); font-weight: 600; }
+h2.sc-h2 { font-size: 1.4rem; letter-spacing: -0.01em; margin: 0 0 8px; }

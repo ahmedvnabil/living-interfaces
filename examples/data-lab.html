@@ -1,0 +1,39 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data Lab — Living Assets</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../themes/tokens.css">
+<link rel="stylesheet" href="../themes/lab.css">
+<link rel="stylesheet" href="shared/showcase.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.min.js"}}</script>
+</head><body class="la-body">
+<nav class="sc-nav"><div class="sc-nav__inner">
+  <a class="la-link" href="index.html"><span class="la-label">← Showcases</span></a>
+  <span class="la-label">Study 05 · Data Lab</span>
+</div></nav>
+
+<div class="sc-section">
+  <span class="la-label">Bench 4 · lattice methods</span>
+  <h1 style="letter-spacing:-0.02em;margin:8px 0 8px">Four instruments, one bench.</h1>
+  <p class="sc-prose">Each stage is an independent PDE or discrete lattice. Stir them.</p>
+  <div class="sc-cols sc-cols--2" style="margin-top:28px">
+    <div class="sc-stage sc-stage--tall" id="rd"><span class="la-label sc-stage__label">Gray–Scott · worker</span></div>
+    <div class="sc-stage sc-stage--tall" id="fluid"><span class="la-label sc-stage__label">Stable fluids</span></div>
+    <div class="sc-stage sc-stage--tall" id="wave"><span class="la-label sc-stage__label">Wave equation</span></div>
+    <div class="sc-stage sc-stage--tall" id="life"><span class="la-label sc-stage__label">Life-like automaton</span></div>
+  </div>
+</div>
+
+<footer class="sc-footer">Living Assets · study 05 · reaction–diffusion runs in a Web Worker on an OffscreenCanvas.</footer>
+
+<script type="module">
+  import ReactionDiffusion from '../assets/simulations/reaction-diffusion.js';
+  import FluidSimulation from '../assets/simulations/fluid-simulation.js';
+  import WaveSimulation from '../assets/simulations/wave-simulation.js';
+  import CellularAutomata from '../assets/simulations/cellular-automata.js';
+  new ReactionDiffusion().init(document.getElementById('rd'));
+  new FluidSimulation().init(document.getElementById('fluid'));
+  new WaveSimulation().init(document.getElementById('wave'));
+  new CellularAutomata().init(document.getElementById('life'));
+</script>
+</body></html>

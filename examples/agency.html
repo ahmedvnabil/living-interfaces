@@ -1,0 +1,38 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agency — Living Assets</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../themes/tokens.css">
+<link rel="stylesheet" href="../themes/lab.css">
+<link rel="stylesheet" href="shared/showcase.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.min.js"}}</script>
+</head><body class="la-body">
+<nav class="sc-nav"><div class="sc-nav__inner">
+  <a class="la-link" href="index.html"><span class="la-label">← Showcases</span></a>
+  <span class="la-label">Study 04 · Agency</span>
+</div></nav>
+
+<header class="sc-hero" style="min-height:82vh">
+  <div class="sc-hero__bg" id="bg"></div>
+  <div class="sc-hero__inner">
+    <span class="la-label">Meridian Practice</span>
+    <h1>We design systems, not screens.</h1>
+    <p class="lede">Brand energy as spring-chain kinematics — <code class="la-mono">RibbonTrails</code>
+    pursues your pointer across the fold.</p>
+    <button class="la-btn la-btn--primary" style="margin-top:20px">Start a project</button>
+  </div>
+</header>
+
+<section class="sc-section sc-cols sc-cols--3">
+  <div><span class="la-label">01 · Strategy</span><p class="sc-prose">Field research, systems mapping, product theses that survive contact with engineering.</p></div>
+  <div><span class="la-label">02 · Identity</span><p class="sc-prose">Generative identity programs whose parameters — not templates — are the brand.</p></div>
+  <div><span class="la-label">03 · Instruments</span><p class="sc-prose">Interfaces built as scientific instruments: legible, live, honest about data.</p></div>
+</section>
+
+<footer class="sc-footer">Living Assets · study 04.</footer>
+
+<script type="module">
+  import RibbonTrails from '../assets/simulations/ribbon-trails.js';
+  new RibbonTrails().init(document.getElementById('bg'), { params: { ribbons: 7, segments: 48 } });
+</script>
+</body></html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weather — Living Assets</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../themes/tokens.css">
+<link rel="stylesheet" href="../themes/lab.css">
+<link rel="stylesheet" href="shared/showcase.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.min.js"}}</script>
+</head><body class="la-body">
+<nav class="sc-nav"><div class="sc-nav__inner">
+  <a class="la-link" href="index.html"><span class="la-label">← Showcases</span></a>
+  <span class="la-label">Study 16 · Weather</span>
+</div></nav>
+
+<header class="sc-hero" style="min-height:52vh">
+  <div class="sc-hero__bg" id="clouds"></div>
+  <div class="sc-hero__inner">
+    <span class="la-badge">SIMULATED FORECAST</span>
+    <h1>Station 12 — synoptic view.</h1>
+    <p class="lede">Shader-marched cloud strata; the pointer opens a thermal gap.</p>
+  </div>
+</header>
+
+<div class="sc-section sc-cols sc-cols--2">
+  <div class="sc-stage sc-stage--tall" id="wind"><span class="la-label sc-stage__label">Surface wind · 10 m</span></div>
+  <div class="sc-stage sc-stage--tall" id="pressure"><span class="la-label sc-stage__label">Pressure isolines</span></div>
+</div>
+
+<div class="sc-section sc-section--hairline sc-cols sc-cols--3">
+  <div class="sc-kpi"><span class="la-label">Temp</span><b>28.4°C</b></div>
+  <div class="sc-kpi"><span class="la-label">Wind</span><b>14 kt WNW</b></div>
+  <div class="sc-kpi"><span class="la-label">Cloud base</span><b>1 900 m</b></div>
+</div>
+
+<footer class="sc-footer">Living Assets · study 16 · simulated forecast.</footer>
+
+<script type="module">
+  import ProceduralClouds from '../assets/simulations/procedural-clouds.js';
+  import WindMap from '../assets/simulations/wind-map.js';
+  import ContourMap from '../assets/simulations/contour-map.js';
+  new ProceduralClouds().init(document.getElementById('clouds'));
+  new WindMap().init(document.getElementById('wind'));
+  new ContourMap().init(document.getElementById('pressure'), { params: { levels: 9 } });
+</script>
+</body></html>

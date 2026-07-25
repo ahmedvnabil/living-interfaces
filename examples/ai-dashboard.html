@@ -1,0 +1,54 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Dashboard — Living Assets</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../themes/tokens.css">
+<link rel="stylesheet" href="../themes/lab.css">
+<link rel="stylesheet" href="shared/showcase.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.min.js"}}</script>
+</head><body class="la-body">
+<nav class="sc-nav"><div class="sc-nav__inner">
+  <a class="la-link" href="index.html"><span class="la-label">← Showcases</span></a>
+  <span class="la-label">Study 02 · AI Research Console</span>
+</div></nav>
+
+<div class="sc-section">
+  <span class="la-label">Run 0847 · model K-7</span>
+  <h1 style="letter-spacing:-0.02em;margin:8px 0 24px">Inference observatory</h1>
+  <div class="sc-cols sc-cols--sidebar">
+    <div class="sc-stage sc-stage--tall" id="attention">
+      <span class="la-label sc-stage__label">Attention dynamics</span>
+    </div>
+    <div style="display:grid;gap:24px">
+      <div class="sc-kpi"><span class="la-label">Tokens / s</span><b>2 431</b></div>
+      <div class="sc-kpi"><span class="la-label">Context window</span><b>200 K</b></div>
+      <div class="sc-kpi"><span class="la-label">Batch queue</span><b>17 jobs</b></div>
+    </div>
+  </div>
+</div>
+
+<div class="sc-section sc-section--hairline sc-cols sc-cols--3">
+  <div class="sc-stage sc-stage--square" id="net">
+    <span class="la-label sc-stage__label">Layer activations</span>
+  </div>
+  <div class="sc-stage sc-stage--square" id="signals">
+    <span class="la-label sc-stage__label">Cluster gossip</span>
+  </div>
+  <div class="sc-stage sc-stage--square" id="throughput">
+    <span class="la-label sc-stage__label">Token throughput</span>
+  </div>
+</div>
+
+<footer class="sc-footer">Living Assets · study 02 · four live instruments in a research console layout.</footer>
+
+<script type="module">
+  import AiThinking from '../assets/simulations/ai-thinking.js';
+  import NeuralNetworkGraph from '../assets/simulations/neural-network-graph.js';
+  import SignalPropagation from '../assets/simulations/signal-propagation.js';
+  import DataRivers from '../assets/simulations/data-rivers.js';
+  new AiThinking().init(document.getElementById('attention'), { params: { tokens: 110 } });
+  new NeuralNetworkGraph().init(document.getElementById('net'));
+  new SignalPropagation().init(document.getElementById('signals'), { params: { nodes: 40 } });
+  new DataRivers().init(document.getElementById('throughput'), { params: { series: 4 } });
+</script>
+</body></html>

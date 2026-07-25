@@ -1,0 +1,39 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ocean Systems — Living Assets</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../themes/tokens.css">
+<link rel="stylesheet" href="../themes/lab.css">
+<link rel="stylesheet" href="shared/showcase.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.min.js"}}</script>
+</head><body class="la-body">
+<nav class="sc-nav"><div class="sc-nav__inner">
+  <a class="la-link" href="index.html"><span class="la-label">← Showcases</span></a>
+  <span class="la-label">Study 22 · Ocean Systems</span>
+</div></nav>
+
+<header class="sc-hero" style="min-height:54vh">
+  <div class="sc-hero__bg" id="waves"></div>
+  <div class="sc-hero__inner">
+    <span class="la-label">Buoy array K · simulated</span>
+    <h1>Surface state, station K.</h1>
+    <p class="lede">The hero is a 2-D wave equation; touch it to drop a swell.</p>
+  </div>
+</header>
+
+<div class="sc-section sc-cols sc-cols--2">
+  <div class="sc-stage sc-stage--tall" id="current"><span class="la-label sc-stage__label">Current advection · dye</span></div>
+  <div class="sc-stage sc-stage--tall" id="wind"><span class="la-label sc-stage__label">Wind over water</span></div>
+</div>
+
+<footer class="sc-footer">Living Assets · study 22 · simulated ocean state.</footer>
+
+<script type="module">
+  import WaveSimulation from '../assets/simulations/wave-simulation.js';
+  import FluidSimulation from '../assets/simulations/fluid-simulation.js';
+  import WindMap from '../assets/simulations/wind-map.js';
+  new WaveSimulation().init(document.getElementById('waves'), { params: { res: 160 } });
+  new FluidSimulation().init(document.getElementById('current'));
+  new WindMap().init(document.getElementById('wind'), { params: { speed: 1.6 } });
+</script>
+</body></html>

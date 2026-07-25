@@ -1,0 +1,37 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Energy Grid — Living Assets</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../themes/tokens.css">
+<link rel="stylesheet" href="../themes/lab.css">
+<link rel="stylesheet" href="shared/showcase.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.min.js"}}</script>
+</head><body class="la-body">
+<nav class="sc-nav"><div class="sc-nav__inner">
+  <a class="la-link" href="index.html"><span class="la-label">← Showcases</span></a>
+  <span class="la-label">Study 23 · Energy Grid</span>
+</div></nav>
+
+<div class="sc-section">
+  <span class="la-badge la-badge--live">GRID NOMINAL · SIMULATED</span>
+  <h1 style="letter-spacing:-0.02em;margin:12px 0 24px">Regional dispatch console</h1>
+  <div class="sc-stage sc-stage--wide" id="transport"><span class="la-label sc-stage__label">Interchange transport · 10 conduits</span></div>
+  <div class="sc-cols sc-cols--sidebar" style="margin-top:24px">
+    <div class="sc-stage sc-stage--tall" id="topology"><span class="la-label sc-stage__label">Substation health · click to repair</span></div>
+    <div style="display:grid;gap:24px">
+      <div class="sc-kpi"><span class="la-label">Demand</span><b>7.4 GW</b></div>
+      <div class="sc-kpi"><span class="la-label">Reserve margin</span><b>11.8%</b></div>
+      <div class="sc-kpi"><span class="la-label">Frequency</span><b>50.02 Hz</b></div>
+    </div>
+  </div>
+</div>
+
+<footer class="sc-footer">Living Assets · study 23 · simulated grid.</footer>
+
+<script type="module">
+  import EnergyStreams from '../assets/simulations/energy-streams.js';
+  import NetworkTopology from '../assets/simulations/network-topology.js';
+  new EnergyStreams().init(document.getElementById('transport'), { params: { conduits: 10, quanta: 22 } });
+  new NetworkTopology().init(document.getElementById('topology'), { params: { edge: 16 } });
+</script>
+</body></html>

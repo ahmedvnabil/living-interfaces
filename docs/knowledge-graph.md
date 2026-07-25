@@ -1,0 +1,46 @@
+# Knowledge Graph
+
+*Graphus notionum · force-directed embedding*
+
+Entities and relations settling under spring–charge equilibrium. Clusters betray latent taxonomy; the pointer perturbs the manifold.
+
+| | |
+|---|---|
+| **ID** | `knowledge-graph` |
+| **Renderer** | canvas2d |
+| **SVG export** | yes — exportSVG() / downloadSVG() |
+| **Tags** | network, data |
+| **Module** | `/assets/simulations/knowledge-graph.js` |
+
+## Parameters
+
+| key | label | range | default |
+|---|---|---|---|
+| `nodes` | Entities | 12 – 120 | 46 |
+| `charge` | Repulsion | 200 – 3000 | 1200 |
+| `spring` | Spring K | 0.005 – 0.1 | 0.03 |
+
+Set live with `asset.setParam(key, value)`, or pass `{ params: { nodes: 46 } }` to `init()`.
+
+## Usage
+
+```html
+<link rel="stylesheet" href="/themes/tokens.css">
+<div id="stage" style="width:640px;height:480px"></div>
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.min.js" } }
+</script>
+<script type="module">
+  import Asset from '/assets/simulations/knowledge-graph.js';
+  const asset = new Asset();
+  asset.init(document.getElementById('stage'), { seed: 42 });
+  // asset.pause() · resume() · resize() · setTheme('light') · setData(...) · destroy()
+</script>
+```
+
+## Lifecycle contract
+
+Every Living Asset implements `init(container, options?)`, `destroy()`, `pause()`,
+`resume()`, `resize()` (also automatic via ResizeObserver), `setTheme(name | tokens)`
+and `setData(payload)`. Rendering auto-pauses off-screen and honors
+`prefers-reduced-motion`. Seeded runs reproduce exactly: pass `{ seed }`.
