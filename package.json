@@ -59,13 +59,13 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.62.0",
-    "@types/three": "^0.165.0",
+    "@types/three": "^0.185.1",
     "esbuild": "^0.28.1",
-    "three": "^0.165.0",
-    "typescript": "^5.9.3"
+    "three": "^0.185.1",
+    "typescript": "^7.0.2"
   },
   "peerDependencies": {
-    "three": "^0.165.0"
+    "three": "^0.185.1"
   },
   "peerDependenciesMeta": {
     "three": {
