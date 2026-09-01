@@ -58,14 +58,14 @@
     "check": "npm run typecheck && npm run test:coverage"
   },
   "devDependencies": {
-    "@playwright/test": "^1.62.0",
+    "@playwright/test": "^1.62.1",
     "@types/three": "^0.165.0",
-    "esbuild": "^0.28.1",
-    "three": "^0.165.0",
-    "typescript": "^5.9.3"
+    "esbuild": "^0.28.2",
+    "three": "^0.185.1",
+    "typescript": "^7.0.2"
   },
   "peerDependencies": {
-    "three": "^0.165.0"
+    "three": "^0.185.1"
   },
   "peerDependenciesMeta": {
     "three": {
