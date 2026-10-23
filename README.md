@@ -172,3 +172,6 @@ All color flows from CSS custom properties (`--la-bg`, `--la-fg`, `--la-muted`,
 `--la-faint`, `--la-accent`, `--la-accent2`). Set `data-theme="light"` on `<html>`,
 override the variables with your brand, or pass explicit tokens to `setTheme()` —
 modules re-read their palette live.
+
+
+![Application screenshot](docs/media/living-interfaces-overview.png)
