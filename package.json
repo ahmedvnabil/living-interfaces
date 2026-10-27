@@ -65,7 +65,7 @@
     "typescript": "^7.0.2"
   },
   "peerDependencies": {
-    "three": "^0.185.1"
+    "three": "^0.165.0 || ^0.185.1"
   },
   "peerDependenciesMeta": {
     "three": {
